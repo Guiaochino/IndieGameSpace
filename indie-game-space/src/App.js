@@ -1,15 +1,21 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import ReactDOM from "react-dom";
 import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Developers from './pages/Developers';
 
 function App() {
   return(
-    <div className="App">
+    <Router>
       <NavBar />
-      
-    </div>
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/about' exact component={AboutUs} />
+        <Route path='/devs' exact component={Developers} />
+      </Switch>
+    </Router>   
   );
 }
 
