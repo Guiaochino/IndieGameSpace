@@ -10,6 +10,6 @@ function Developers() {
             </div>
         </section>
     );
-}
+};
 
 export default Developers;
