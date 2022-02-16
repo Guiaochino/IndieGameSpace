@@ -1,11 +1,14 @@
 import React from 'react'
 import HomeContent from '../components/HomeContent';
-import { homeObjOne } from './HomeData';
+import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
 
 const Home = () => {
   return (
     <>
         <HomeContent {...homeObjOne}/>
+        <HomeContent {...homeObjTwo}/>
+        <HomeContent {...homeObjThree}/>
+        <HomeContent {...homeObjFour}/>
     </>
   );
 };
