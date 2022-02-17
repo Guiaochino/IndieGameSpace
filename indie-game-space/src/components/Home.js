@@ -1,5 +1,6 @@
 import React from 'react'
-import HomeContent from '../components/HomeContent';
+import HomeContent from './HomeContent';
+import Footer from './Footer';
 import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
 
 const Home = () => {
@@ -9,7 +10,9 @@ const Home = () => {
         <HomeContent {...homeObjTwo}/>
         <HomeContent {...homeObjThree}/>
         <HomeContent {...homeObjFour}/>
+        <Footer />
     </>
+    
   );
 };
 
