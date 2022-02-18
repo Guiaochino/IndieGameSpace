@@ -3,16 +3,42 @@
 // Import Dependencies
 // Icons
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa"
-import {  } from "./Comment.elements"
+import { commentContainer, upperDisplay, lowerDisplay, imageContainer, textContainer, nameStyle, messageStyle,upvoteContainer, downvoteContainer } from "./Comment.elements"
 
+
+// CommentDisplay contains the following
+// Image, Name, message - upper
+// upvote, number of upvote, downvote, number of downvote - lower
 
 // This is a comment DISPLAY
 const CommentDisplay = (props) => {
-    // return(
-    //     // TODO: Structure of Comment to Display on the webpage
-    // );
+    return(
+        <commentContainer>
+
+            <upperDisplay>
+                <imageContainer src="" alt=""/>
+                <textContainer>
+                    <nameStyle></nameStyle>
+                    <messageStyle></messageStyle>
+                </textContainer>
+            </upperDisplay>
+
+            <lowerDisplay>
+                <upvoteContainer>
+                    <FaRegThumbsUp />
+                </upvoteContainer>
+                <downvoteContainer>
+                    <FaRegThumbsDown />
+                </downvoteContainer>
+            </lowerDisplay>
+        </commentContainer>
+    );
 }
 
+
+// CommentForms contains the following
+// image, name, message - uper
+// comment button - lower
 
 // This is for comment FORMS
 const CommentForm = () => {
