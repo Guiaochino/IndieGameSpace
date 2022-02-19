@@ -42,8 +42,16 @@ export const upvoteContainer = styled.div`
 
 `;
 
+export const Count = styled.h1`
+
+`;
+
 export const downvoteContainer = styled.div`
 
 `;
 
 // For Comment Form
+export const formField = styled.form`
+
+`;
+

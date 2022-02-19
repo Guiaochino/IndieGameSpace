@@ -3,7 +3,7 @@
 // Import Dependencies
 // Icons
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa"
-import { commentContainer, upperDisplay, lowerDisplay, imageContainer, textContainer, nameStyle, messageStyle,upvoteContainer, downvoteContainer } from "./Comment.elements"
+import { CommentContainer, UpperDisplay, LowerDisplay, ImageContainer, TextContainer, NameStyle, MessageStyle, UpvoteContainer, Count, DownvoteContainer, FormField } from "./Comment.elements"
 
 
 // CommentDisplay contains the following
@@ -13,25 +13,33 @@ import { commentContainer, upperDisplay, lowerDisplay, imageContainer, textConta
 // This is a comment DISPLAY
 const CommentDisplay = (props) => {
     return(
-        <commentContainer>
+        <CommentContainer>
+            
+            <UpperDisplay>
 
-            <upperDisplay>
-                <imageContainer src="" alt=""/>
-                <textContainer>
-                    <nameStyle></nameStyle>
-                    <messageStyle></messageStyle>
-                </textContainer>
-            </upperDisplay>
+                <ImageContainer src={props.image} alt="default"/>
 
-            <lowerDisplay>
-                <upvoteContainer>
+                <TextContainer>
+                    <NameStyle></NameStyle>
+                    <MessageStyle></MessageStyle>
+                </TextContainer>
+
+            </UpperDisplay>
+
+            <LowerDisplay>
+
+                <UpvoteContainer>
                     <FaRegThumbsUp />
-                </upvoteContainer>
-                <downvoteContainer>
+                    <Count></Count>
+                </UpvoteContainer>
+
+                <DownvoteContainer>
                     <FaRegThumbsDown />
-                </downvoteContainer>
-            </lowerDisplay>
-        </commentContainer>
+                    <Count></Count>
+                </DownvoteContainer>
+
+            </LowerDisplay>
+        </CommentContainer>
     );
 }
 
@@ -41,10 +49,31 @@ const CommentDisplay = (props) => {
 // comment button - lower
 
 // This is for comment FORMS
-const CommentForm = () => {
-    // return(
-    //     // TODO: Structure for Forms when Commenting
-    // )
+const CommentForm = (props) => {
+    return(
+        <CommentContainer>
+
+            <UpperDisplay>
+                
+                <ImageContainer src="" alt=""/>
+
+                <FormField>
+
+                    <input type="text" maxlength="25" palceholder="Name" />
+                    <textarea rows="" cols=""/>
+
+                </FormField>
+
+            </UpperDisplay>
+
+            <LowerDisplay>
+                <button>Comment</button>
+            </LowerDisplay>
+
+        </CommentContainer>
+    );
 }
 
-export default { CommentDisplay, CommentForm };
+const Comment = { CommentDisplay, CommentForm }
+
+export default Comment;
