@@ -7,38 +7,38 @@ import styled from "styled-components"
 
 // For Both Diplay and forms
 // Container for both display and form
-export const commentContainer = styled.div`    
+export const CommentContainer = styled.div`    
 
 `;
 
-export const upperDisplay = styled.div`
+export const UpperDisplay = styled.div`
 
 `;
 
-export const lowerDisplay = styled.div`
+export const LowerDisplay = styled.div`
 
 `;
 
 // For Comment Display
 // Upper display Portion
-export const imageContainer = styled.img`
+export const ImageContainer = styled.img`
 
 `;
 
-export const textContainer = styled.div`
+export const TextContainer = styled.div`
 
 `;
 
-export const nameStyle = styled.h1`
+export const NameStyle = styled.h1`
 
 `;
 
-export const messageStyle = styled.h6`
+export const MessageStyle = styled.h6`
 
 `;
 
 // Lower display Portion
-export const upvoteContainer = styled.div`
+export const UpvoteContainer = styled.div`
 
 `;
 
@@ -46,12 +46,12 @@ export const Count = styled.h1`
 
 `;
 
-export const downvoteContainer = styled.div`
+export const DownvoteContainer = styled.div`
 
 `;
 
 // For Comment Form
-export const formField = styled.form`
+export const FormField = styled.form`
 
 `;
 
