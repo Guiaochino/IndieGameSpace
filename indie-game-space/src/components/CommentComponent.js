@@ -2,9 +2,10 @@
 
 // Import Dependencies
 // Icons
+import React from 'react';
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa"
 import { CommentContainer, UpperDisplay, LowerDisplay, ImageContainer, TextContainer, NameStyle, MessageStyle, UpvoteContainer, Count, DownvoteContainer, FormField } from "./Comment.elements"
-
+import defaultUser from '../images/defaultUser.png'
 
 // CommentDisplay contains the following
 // Image, Name, message - upper
@@ -17,11 +18,11 @@ const CommentDisplay = (props) => {
             
             <UpperDisplay>
 
-                <ImageContainer src={props.image} alt="default"/>
+                <ImageContainer src={ props.image } alt= { props.imageName }/>
 
                 <TextContainer>
-                    <NameStyle></NameStyle>
-                    <MessageStyle></MessageStyle>
+                    <NameStyle> { props.name } </NameStyle>
+                    <MessageStyle> { props.message } </MessageStyle>
                 </TextContainer>
 
             </UpperDisplay>
@@ -43,6 +44,12 @@ const CommentDisplay = (props) => {
     );
 }
 
+CommentDisplay.defaultProps = {
+    image: defaultUser,
+    imageName: "User",
+    name: "Anonymous"
+}
+
 
 // CommentForms contains the following
 // image, name, message - uper
@@ -55,7 +62,7 @@ const CommentForm = (props) => {
 
             <UpperDisplay>
                 
-                <ImageContainer src="" alt=""/>
+                <ImageContainer src={ props.image } alt={ props.imageName }/>
 
                 <FormField>
 
@@ -74,6 +81,11 @@ const CommentForm = (props) => {
     );
 }
 
-const Comment = { CommentDisplay, CommentForm }
+CommentForm.defaultProps = { 
+    image: "defaultUser.jpg",
+    imageName: "User"
+ }
 
-export default Comment;
+// const Comment = { CommentDisplay, CommentForm }
+
+export { CommentDisplay, CommentForm };
