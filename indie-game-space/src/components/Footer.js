@@ -29,12 +29,19 @@ const Footer = () => {
             <FooterLinksWrapper>
                 <FooterLinksItems>
                     <FooterLinksTitle>About Us</FooterLinksTitle>
-                    <FooterLink to='/'> About Us Content Here</FooterLink> //insert about us paragraph here instead of links
+                    <FooterLink to='/'> About Us Content Here </FooterLink> 
                 </FooterLinksItems>
 
                 <FooterLinksItems>
                     <FooterLinksTitle>Contact Us</FooterLinksTitle>
                     <FooterLink to='/'> Email </FooterLink> 
+                </FooterLinksItems>
+            </FooterLinksWrapper>
+            <FooterLinksWrapper>
+                <FooterLinksItems>
+                    <FooterLinksTitle>Videos</FooterLinksTitle>
+                    <FooterLink to='/'> Game Demos </FooterLink> 
+                    <FooterLink to='/'> Streamer Gameplays </FooterLink> 
                 </FooterLinksItems>
 
                 <FooterLinksItems>
@@ -52,7 +59,7 @@ const Footer = () => {
                         IndieGameSpace
                 </SocialLogo>
                 <WebsiteRights>
-                    ©IndieGameSpace 2022
+                    © IndieGameSpace 2022
                 </WebsiteRights>
                 <SocialIcons>
                     <SocialIconLink href='/' target="_blank" aria-label="Facebook">
@@ -64,9 +71,10 @@ const Footer = () => {
                     <SocialIconLink href='/' target="_blank" aria-label="Instagram">
                         <FaInstagram />
                     </SocialIconLink>
-                    <SocialIconLink href='/' target="_blank" aria-label="Youtube">
+                    <SocialIconLink href='/' target="_blank" aria-label="Youtube" rel="noopener noreferrer">
                         <FaYoutube />
                     </SocialIconLink>
+                    
                 </SocialIcons>
             </SocialMediaWrap>
         </SocialMedia>
