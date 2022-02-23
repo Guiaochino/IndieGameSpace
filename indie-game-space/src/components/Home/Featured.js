@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../globalStyles";
-import { GiCrystalBars, GiCutDiamond, GiRock, GiFloatingCrystal } from "react-icons/gi";
+import { Button } from "../../globalStyles";
+import { GiRock } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
 import { FeaturedSection, FeaturedWrapper, FeaturedHeading, FeaturedContainer,
         FeaturedCard, FeaturedCardInfo, FeaturedCardIcon, FeaturedCardPlan,

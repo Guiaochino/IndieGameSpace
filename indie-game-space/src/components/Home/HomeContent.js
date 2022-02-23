@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from '../globalStyles';
+import { Container, Button } from '../../globalStyles';
 import { Link } from 'react-router-dom';
 import { HomeCont, InfoRow, InfoColumn, TextWrapper, TopLine, Heading, Subtitle } from './HomeContent.elements';
 
