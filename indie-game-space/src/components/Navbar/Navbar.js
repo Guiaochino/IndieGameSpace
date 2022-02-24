@@ -1,30 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react';
 import { Nav, NavbarContainer, NavLogo, NavIcon,
-        MobileIcon, NavMenu, NavItem, NavLinks,
-        NavItemBtn, NavBtnLink } from './Navbar.elements.js';
-import { FaBars, FaTimes } from 'react-icons/fa';
+        MobileIcon, NavMenu, NavItem, NavLinks } from './Navbar.elements.js';
+import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { Button } from '../globalStyles';
 
-const Navbar = () => {
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
-    const handleClick = () => setClick(!click);
-
-    const showButton = () => {
-        if(window.innerWidth <= 960) {
-            setButton(false)
-        }   else {
-            setButton(true)
-        }
-    }
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    window.addEventListener('resize', showButton);
-
+const Navbar = ({ toggle }) => {
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
@@ -34,11 +14,12 @@ const Navbar = () => {
                             <NavIcon />
                                 IndieGameSpace
                         </NavLogo>
-                        <MobileIcon onClick={handleClick} >
-                            {click ? <FaTimes /> : <FaBars />}
+
+                        <MobileIcon onClick={toggle}>
+                            <FaBars />
                         </MobileIcon>
 
-                        <NavMenu onClick={handleClick} click={click}> 
+                        <NavMenu> 
                             <NavItem>
                                 <NavLinks to='/'>
                                     Home
@@ -52,12 +33,12 @@ const Navbar = () => {
                             </NavItem>
                         
                             <NavItem>
-                                <NavLinks to='/reviews'>
-                                    Reviews
+                                <NavLinks to='/games'>
+                                    Games
                                 </NavLinks>
                             </NavItem>
 
-                            <NavItemBtn>
+                            {/* <NavItemBtn>
                                 {button ? (
                                     <NavBtnLink to="/sign-up">
                                         <Button primary>SIGN UP</Button>
@@ -69,7 +50,7 @@ const Navbar = () => {
                                         </Button>
                                     </NavBtnLink>
                                 )}
-                            </NavItemBtn>
+                            </NavItemBtn> */}
                         </NavMenu>
 
                     </NavbarContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../globalStyles';
+import { Button } from '../../globalStyles';
 import { FooterContainer, FooterSubscription, FooterSubText, 
     FooterSubHeading, Form, FormInput, FooterLinksContainer, 
     FooterLinksItems, FooterLinksWrapper, FooterLink,
