@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Gi3DGlasses } from "react-icons/gi";
 
 export const FooterContainer = styled.div`
-    background-color: #101522;
+    background-color: #0a5d64;
     padding: 4rem 0 2rem 0;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@ export const SocialMedia = styled.section`
 
 export const SocialMediaWrap = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 90%;
     max-width: 1000px;
@@ -129,11 +129,16 @@ export const SocialLogo = styled(Link)`
     color: #fff;
     justify-self: start;
     cursor: pointer;
-    text-direction: none;
+    text-decoration: none;
     font-size: 2rem;
     display: flex;
     align-items: center;
     margin-bottom: 16px;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
 `;
 
 export const SocialIcon = styled(Gi3DGlasses)`
@@ -155,4 +160,9 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 24px;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
 `;

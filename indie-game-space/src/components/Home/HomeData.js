@@ -5,11 +5,11 @@ export const homeObjOne = {
     lightBg: false, 
     imgStart: '', 
     lightTopLine: true, 
-    lightTextDesc: true, 
+    lightTextDesc: true,
+    lightText: true, 
     buttonLabel: 'Get Started', 
     description: 'insert description here', 
     headline: 'insert headline here', 
-    lightText: 'true', 
     topLine: 'insert topline here'
 };
 
@@ -19,10 +19,10 @@ export const homeObjTwo = {
     imgStart: '', 
     lightTopLine: false, 
     lightTextDesc: false, 
+    lightText: false, 
     buttonLabel: 'Get Started', 
     description: 'insert description here', 
     headline: 'insert headline here', 
-    lightText: 'false', 
     topLine: 'insert topline here'
 };
 
@@ -32,10 +32,10 @@ export const homeObjThree = {
     imgStart: '', 
     lightTopLine: true, 
     lightTextDesc: true, 
+    lightText: true, 
     buttonLabel: 'Get Started', 
     description: 'insert description here', 
     headline: 'insert headline here', 
-    lightText: 'true', 
     topLine: 'insert topline here'
 };
 
@@ -43,11 +43,11 @@ export const homeObjFour = {
     primary: false, 
     lightBg: true, 
     imgStart: '', 
-    lightTopLine: true, 
-    lightTextDesc: true, 
+    lightTopLine: false, 
+    lightTextDesc: false, 
+    lightText: false, 
     buttonLabel: 'Get Started', 
     description: 'insert description here', 
     headline: 'insert headline here', 
-    lightText: 'true', 
     topLine: 'insert topline here'
 };

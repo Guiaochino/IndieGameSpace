@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { Gi3DGlasses } from "react-icons/gi";
 import { Container } from '../../globalStyles';
-import { Link as LinkR } from 'react-router-dom';
-import { Link as LinkS } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 export const Nav = styled.nav`
-    background: #333333;
+    background: #0a5d64;
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -31,18 +30,23 @@ export const NavbarContainer = styled(Container)`
     max-width: 1100px;
 `;
 
-export const NavLogo = styled(LinkR)`
+export const NavLogo = styled(Link)`
     color: #fff;
-    justify-self: flex-start;
+    justify-self: start;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     display: flex;
     align-items: center;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
 `;
 
 export const NavIcon = styled(Gi3DGlasses)`
-    margin-right: 0.5rem;
+    margin-right: 10px;
 `;
 
 export const MobileIcon = styled.div`
@@ -58,7 +62,7 @@ export const MobileIcon = styled.div`
         cursor: pointer;
         color: #fff;
 
-        $:hover {
+        &:hover {
             color: #000000;
             transition: all 0.3s ease;
         }
@@ -101,7 +105,7 @@ export const NavItem = styled.li`
     // }
 `;
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(Link)`
     color: #fff;
     display: flex;
     align-items: center;
@@ -112,15 +116,15 @@ export const NavLinks = styled(LinkS)`
     font-size: 1.5rem;
     margin-top: 6px;
 
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+
     // @media screen and (max-width: 960px) {
     //     text-align: center;
     //     padding: 1rem;
     //     width: 100%;
     //     display: table;
-
-    //     $:hover {
-    //         color: #333333;
-    //         transition: all 0.3s ease;
-    //     }
     // }
 `;

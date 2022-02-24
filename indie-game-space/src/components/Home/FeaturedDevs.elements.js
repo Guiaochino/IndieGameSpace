@@ -6,7 +6,7 @@ export const FeaturedSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #4b59f7;
+    background: #ffffff;
 `;
 
 export const FeaturedWrapper = styled.div`
@@ -24,10 +24,11 @@ export const FeaturedWrapper = styled.div`
 `;
 
 export const FeaturedHeading = styled.h1`
-    color: #fff;
+    color: #000000;
     font-size: 48px;
     margin-top: 30px;
     margin-bottom: 10px;
+    font-weight: bold;
 `;
 
 export const FeaturedContainer = styled.div`
@@ -45,8 +46,8 @@ export const FeaturedContainer = styled.div`
 `;
 
 export const FeaturedCard = styled(Link)`
-    background: #242424;
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
+    background: #0a5d64;
+    box-shadow: 0 6px 20px rgba(61, 92, 87, 0.8);
     width: 280px;
     height: 500px;
     text-decoration: none; border-radius: 4px;
@@ -56,6 +57,7 @@ export const FeaturedCard = styled(Link)`
     }
 
     &:hover {
+        border-radius: 15px 80px;
         transform: scale(1.06);
         transition: all 0.3s ease-out;
         color: #1c2237;
@@ -97,8 +99,8 @@ export const FeaturedCardLength = styled.p`
     margin-bottom: 24px;
 `;
 
-export const FeaturedCardFeatures = styled.ul`
-    margin: 16px 0 32px:;
+export const FeaturedCardFeatures = styled.li`
+    margin: 16px 0 16px;
     list-style: none;
     display: flex;
     flex-direction: column;
