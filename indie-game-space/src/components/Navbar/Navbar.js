@@ -10,49 +10,20 @@ const Navbar = ({ toggle }) => {
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
                     <NavbarContainer>
-                        <NavLogo to='/'>
+                        <NavLogo to="/">
                             <NavIcon />
                                 IndieGameSpace
                         </NavLogo>
 
-                        <MobileIcon onClick={toggle}>
+                        <MobileIcon onClick={toggle} to='/'>
                             <FaBars />
                         </MobileIcon>
 
                         <NavMenu> 
-                            <NavItem>
-                                <NavLinks to='/'>
-                                    Home
-                                </NavLinks>
-                            </NavItem>
-                       
-                            <NavItem>
-                                <NavLinks to='/developers'>
-                                    Developers
-                                </NavLinks>
-                            </NavItem>
-                        
-                            <NavItem>
-                                <NavLinks to='/games'>
-                                    Games
-                                </NavLinks>
-                            </NavItem>
-
-                            {/* <NavItemBtn>
-                                {button ? (
-                                    <NavBtnLink to="/sign-up">
-                                        <Button primary>SIGN UP</Button>
-                                    </NavBtnLink>
-                                ) : (
-                                    <NavBtnLink to="/sign-up">
-                                        <Button fontBig primary>
-                                            &nbsp;SIGN UP&nbsp;
-                                        </Button>
-                                    </NavBtnLink>
-                                )}
-                            </NavItemBtn> */}
+                                <NavLinks to='/' > Home </NavLinks>
+                                <NavLinks to='developers' > Developers </NavLinks>
+                                <NavLinks to='games' > Games </NavLinks>
                         </NavMenu>
-
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>

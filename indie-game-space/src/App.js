@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import GlobalStyle from './globalStyles';
 import Sidebar from './components/Sidebar/Sidebar';
+import Games from './pages/Games';
+import Developers from './components/Developers';
 
 function App() {
   //sidebar function
@@ -20,6 +22,8 @@ function App() {
       <Navbar toggle={toggle} />
       <Switch>
         <Route path='/' exact component={Home} />
+        <Route path='/developers' component={Developers} />
+        <Route path='/games' component={Games} />
       </Switch>
     </Router>   
   );

@@ -1,15 +1,19 @@
 import React from 'react'
 import HomeContent from './HomeContent';
 import Footer from '../Footer/Footer';
-import Featured from './Featured';
+import FeaturedGames from './FeaturedGames';
 import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
+import FeaturedDevs from './FeaturedDevs';
+import TopFiller from '../TopFiller/TopFiller';
 
 const Home = () => {
   return (
-    <>
+    <>  
+        <TopFiller />
         <HomeContent {...homeObjOne}/>
+        <FeaturedDevs />
+        <FeaturedGames />
         <HomeContent {...homeObjTwo}/>
-        <Featured />
         <HomeContent {...homeObjThree}/>
         <HomeContent {...homeObjFour}/>
         <Footer />

@@ -6,7 +6,7 @@ import { FooterContainer, FooterSubscription, FooterSubText,
     FooterLinksTitle, SocialMedia, SocialMediaWrap,
     SocialLogo, WebsiteRights, SocialIcons, SocialIconLink,
     SocialIcon } from './Footer.elements';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
             </Form>
         </FooterSubscription>
 
-        <FooterLinksContainer>
+        {/* <FooterLinksContainer>
             <FooterLinksWrapper>
                 <FooterLinksItems>
                     <FooterLinksTitle>About Us</FooterLinksTitle>
@@ -51,16 +51,27 @@ const Footer = () => {
                     <FooterLink to='/'> Instagram </FooterLink>
                 </FooterLinksItems>
             </FooterLinksWrapper>
-        </FooterLinksContainer>
+        </FooterLinksContainer> */}
+
         <SocialMedia>
             <SocialMediaWrap>
                 <SocialLogo to="/">
                     <SocialIcon />
-                        IndieGameSpace
+                        IndieGameSpace 
                 </SocialLogo>
+            </SocialMediaWrap>
+        </SocialMedia>
+
+        <SocialMedia>
+            <SocialMediaWrap>
                 <WebsiteRights>
                     © IndieGameSpace 2022
                 </WebsiteRights>
+            </SocialMediaWrap>
+        </SocialMedia>
+
+        <SocialMedia>
+            <SocialMediaWrap>
                 <SocialIcons>
                     <SocialIconLink href='/' target="_blank" aria-label="Facebook">
                         <FaFacebook />
@@ -74,10 +85,13 @@ const Footer = () => {
                     <SocialIconLink href='/' target="_blank" aria-label="Youtube" rel="noopener noreferrer">
                         <FaYoutube />
                     </SocialIconLink>
-                    
+                    <SocialIconLink href='/' target="_blank" aria-label="Email" rel="noopener noreferrer">
+                        <FaEnvelope />
+                    </SocialIconLink>
                 </SocialIcons>
             </SocialMediaWrap>
         </SocialMedia>
+        
     </FooterContainer>
   )
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HomeCont = styled.div`
+export const GamesCont = styled.div`
     color: #ffffff;
     padding: 160px 0;
     background: ${({ lightBg }) => (lightBg ? '#ffffff' : '#333333')};
@@ -61,4 +61,19 @@ export const Subtitle = styled.p`
     font-size: 18px;
     line-height: 24px;
     color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
+`;
+
+export const ImgWrapper = styled.div`
+    max-width: 555px;
+    display: flex;
+    justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')}
+`;
+
+export const Img = styled.img`
+    padding-right: 0;
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 500px;
 `;
