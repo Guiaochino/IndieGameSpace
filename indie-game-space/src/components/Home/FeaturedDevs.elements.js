@@ -6,7 +6,7 @@ export const FeaturedSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #ffffff;
+    background: #f2e6d0;
 `;
 
 export const FeaturedWrapper = styled.div`
@@ -24,7 +24,7 @@ export const FeaturedWrapper = styled.div`
 `;
 
 export const FeaturedHeading = styled.h1`
-    color: #000000;
+    color: #333333;
     font-size: 48px;
     margin-top: 30px;
     margin-bottom: 10px;

@@ -1,8 +1,13 @@
 import React from 'react'
+import TopFiller from '../components/TopFiller/TopFiller'
+import DevsSignIn from './DevsSignIn'
 
 const Developers = () => {
   return (
-    <h1>Developers</h1>
+    <>  
+        <TopFiller />
+        <DevsSignIn /> 
+    </>
   )
 }
 

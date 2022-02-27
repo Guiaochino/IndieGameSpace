@@ -6,7 +6,9 @@ import Home from './components/Home/Home';
 import GlobalStyle from './globalStyles';
 import Sidebar from './components/Sidebar/Sidebar';
 import Games from './pages/Games';
-import Developers from './components/Developers';
+import Developers from './pages/Developers';
+import ScrollToTop from './components/ScrollToTop';
+
 
 function App() {
   //sidebar function
@@ -17,6 +19,7 @@ function App() {
 
   return(
     <Router>
+      <ScrollToTop />
       <GlobalStyle />
       <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle} />

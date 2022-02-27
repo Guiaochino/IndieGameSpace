@@ -10,7 +10,7 @@ const Navbar = ({ toggle }) => {
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
                     <NavbarContainer>
-                        <NavLogo to="/">
+                        <NavLogo to='/' >
                             <NavIcon />
                                 IndieGameSpace
                         </NavLogo>
@@ -20,9 +20,17 @@ const Navbar = ({ toggle }) => {
                         </MobileIcon>
 
                         <NavMenu> 
-                                <NavLinks to='/' > Home </NavLinks>
+                            <NavItem>
+                                <NavLinks to='/' > 
+                                    Home 
+                                </NavLinks>
+                            </NavItem>
+                            <NavItem>
                                 <NavLinks to='developers' > Developers </NavLinks>
+                            </NavItem>
+                            <NavItem>
                                 <NavLinks to='games' > Games </NavLinks>
+                            </NavItem>
                         </NavMenu>
                     </NavbarContainer>
                 </Nav>
