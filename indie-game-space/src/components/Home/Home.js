@@ -5,14 +5,11 @@ import FeaturedGames from './FeaturedGames';
 import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
 import FeaturedDevs from './FeaturedDevs';
 import TopFiller from '../TopFiller/TopFiller';
-import ImgSlider from '../GameProfile/ImgSlider';
-import { ImgSliderData } from '../GameProfile/ImgSliderData';
 
 const Home = () => {
   return (
     <>  
         <TopFiller />
-        <ImgSlider slides={ImgSliderData} />
         <HomeContent {...homeObjOne}/>
         <FeaturedDevs />
         <FeaturedGames />

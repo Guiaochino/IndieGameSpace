@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Gi3DGlasses } from "react-icons/gi";
 import { Container } from '../../globalStyles';
 import { Link } from 'react-router-dom';
+import { FaCaretDown } from "react-icons/fa";
 
 export const Nav = styled.nav`
     background: #0a5d64;
@@ -47,6 +48,15 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled(Gi3DGlasses)`
     margin-right: 10px;
+`;
+
+export const NavDropdown = styled(FaCaretDown)`
+    color: #fff;
+
+    &:hover {
+        color: #083b40;
+        transition: all 0.3s ease;
+    };
 `;
 
 export const MobileIcon = styled.div`
