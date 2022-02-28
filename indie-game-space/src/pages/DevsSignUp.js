@@ -1,27 +1,29 @@
-//developers sign in page
+//developers sign up page
 
 import React from 'react'
 import TopFiller from '../components/TopFiller/TopFiller';
 import { FormContent, FormInput, FormWrap,
-        Icon, Form, FormH1, FormButton,
-        FormLabel, Container, Text } from './DevsSignIn.elements';
+        Form, FormH1, FormButton,
+        FormLabel, Container, Text } from './DevsSignUp.elements';
 
-const DevsSignIn = () => {
+const DevsSignUp = () => {
   return (
     <>
       <TopFiller />
       <Container>
         <FormWrap>
-          {/* <Icon to="/"> IndieGameSpace </Icon> */}
           <FormContent>
             <Form action='#'>
-              <FormH1> Sign In to your Account </FormH1>
-              <FormLabel htmlFor='for'> Email </FormLabel>
+              <FormH1> Sign Up to Create an Account </FormH1>
+                <FormLabel htmlFor='for'> Username </FormLabel>
+                <FormInput type='email' required />
+                <FormLabel htmlFor='for'> Email </FormLabel>
                 <FormInput type='email' required />
                 <FormLabel htmlFor='for'> Password </FormLabel>
                 <FormInput type='password' required/>
+
                 <FormButton type='submit'> Continue </FormButton>
-                <Text> Forgot Password? </Text>
+                <Text> Already have an account? </Text>
             </Form>
           </FormContent>
         </FormWrap>
@@ -30,4 +32,4 @@ const DevsSignIn = () => {
   )
 }
 
-export default DevsSignIn;
+export default DevsSignUp;
