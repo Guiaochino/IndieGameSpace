@@ -13,6 +13,7 @@ export const gamesObjOne = {
     topLine: '[Game Description]',
     img: require('../images/game1.svg').default,
     alt: 'image1'
+    // insert link on Heading to redirect to game profile page
 };
 
 export const gamesObjTwo = {
