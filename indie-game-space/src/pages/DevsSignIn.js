@@ -70,6 +70,31 @@ class DevsSignIn extends Component {
     );
   }
 
+<<<<<<< HEAD
+=======
+const DevsSignIn = () => {
+  return (
+    <>
+      <TopFiller />
+      <Container>
+        <FormWrap>
+          {/* <Icon to="/"> IndieGameSpace </Icon> */}
+          <FormContent>
+            <Form action='#'>
+              <FormH1> Sign In to your Account </FormH1>
+              <FormLabel htmlFor='for'> Email </FormLabel>
+                <FormInput type='email' required />
+                <FormLabel htmlFor='for'> Password </FormLabel>
+                <FormInput type='password' required/>
+                <FormButton type='submit'> Continue </FormButton>
+                <Text> Forgot Password? </Text>
+            </Form>
+          </FormContent>
+        </FormWrap>
+      </Container>
+    </>
+  )
+>>>>>>> 976937ca02e967c3e0aff56c382f8f3abb05c894
 }
 
 export default DevsSignIn;
