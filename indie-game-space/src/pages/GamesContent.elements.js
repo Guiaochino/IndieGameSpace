@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const GamesCont = styled.div`
@@ -48,11 +49,21 @@ export const TopLine = styled.div`
     margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled(Link)`
     margin-bottom: 24px;
     font-size: 48px;
     line-height: 1.1;
-    color: ${({ lightText }) => (lightText ? '#f7f8a' : '#1c2237')};
+    color: #0a5d64;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    font-weight: bold;
+
+    &:hover {
+        color: ${({ lightText }) => (lightText ? '#f2e6d0' : '#333333')};
+        transition: all 0.3s ease;
+    }
 `;
 
 export const Subtitle = styled.p`

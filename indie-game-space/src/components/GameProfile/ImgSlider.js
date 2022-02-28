@@ -11,6 +11,8 @@ const ImgSlider = ({ slides }) => {
       setCurrent(current === length -1 ? 0 : current + 1);
   };
 
+  // image slider component for game profile
+  
   const prevSlide = () => {
     setCurrent(current === 0 ? length -1 : current - 1);
   };
