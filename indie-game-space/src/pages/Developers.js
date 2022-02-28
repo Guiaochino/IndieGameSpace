@@ -1,12 +1,19 @@
 import React from 'react'
-import TopFiller from '../components/TopFiller/TopFiller'
-import DevsSignIn from './DevsSignIn'
+import Footer from '../components/Footer/Footer';
+import TopFiller from '../components/TopFiller/TopFiller';
+import DevsContent from './DevsContent';
+import { devsObjFour, devsObjOne, devsObjThree, devsObjTwo } from './DevsData';
+
 
 const Developers = () => {
   return (
     <>  
         <TopFiller />
-        <DevsSignIn /> 
+        <DevsContent {...devsObjOne}/>
+        <DevsContent {...devsObjTwo}/>
+        <DevsContent {...devsObjThree}/>
+        <DevsContent {...devsObjFour}/>
+        <Footer />
     </>
   )
 }

@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Games from './pages/Games';
 import Developers from './pages/Developers';
 import ScrollToTop from './components/ScrollToTop';
+import DevsSignIn from './pages/DevsSignIn';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/developers' component={Developers} />
+        <Route path='/devsSignIn' component={DevsSignIn} />
         <Route path='/games' component={Games} />
       </Switch>
     </Router>   
