@@ -1,7 +1,6 @@
 // developers sign up page styled components
 
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     min-height: 692px;
@@ -23,20 +22,6 @@ export const FormWrap = styled.div`
 
     @media screen and (Max-width: 480px) {
         height: 80%
-    };
-`;
-
-export const Icon = styled(Link)`
-    margin-left: 32px;
-    margin-top: 32px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 32px;
-
-    @media screen and (Max-width: 480px) {
-        margin-left: 16px;
-        margin-top: 8px;
     };
 `;
 
