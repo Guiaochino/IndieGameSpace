@@ -15,9 +15,24 @@ export default class DevsSignUp extends Component{
     password: ""
   };
 
-  handleChange = async (change, e) => {
-    
+  handleUsername = async (e) => {
+    await this.setState({
+      username : e.target.value
+    })
   }
+
+  handleEmail = async (e) => {
+    await this.setState({
+      email : e.target.value
+    })
+  }
+
+  handlePassword = async (e) => {
+    await this.setState({
+      password : e.target.value
+    })
+  }
+
 
   handleSubmit = e => {
     // Put Code Here for Signup
@@ -31,7 +46,7 @@ export default class DevsSignUp extends Component{
 
     axios.post(url, data)
     .then(response=> {
-      // what to do after sending of data
+      alert(response.data);
     })
     .catch(err=>console.log(err));
   }
@@ -46,11 +61,11 @@ export default class DevsSignUp extends Component{
               <Form action='#'>
                 <FormH1> Sign Up to Create an Account </FormH1>
                   <FormLabel htmlFor='for'> Username </FormLabel>
-                  <FormInput type='email' required />
+                  <FormInput type='text' required onChange={ this.handleUsername }/>
                   <FormLabel htmlFor='for'> Email </FormLabel>
-                  <FormInput type='email' required />
+                  <FormInput type='email' required onChange={ this.handleEmail }/>
                   <FormLabel htmlFor='for'> Password </FormLabel>
-                  <FormInput type='password' required/>
+                  <FormInput type='password' required onChange={ this.handlePassword }/>
 
                   <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
                   <Text> Already have an account? </Text>
