@@ -13,7 +13,7 @@ function FeaturedGames() {
                 <FeaturedWrapper>
                     <FeaturedHeading>Featured Games</FeaturedHeading>
                     <FeaturedContainer>
-                        <FeaturedCard to='/game-link'>
+                        <FeaturedCard to='/gameProfile'>
                             <FeaturedCardInfo>
                                 <FeaturedCardIcon>
                                     <GiRock />

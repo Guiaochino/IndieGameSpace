@@ -32,20 +32,6 @@ export const FormWrap = styled.div`
     };
 `;
 
-export const Icon = styled(Link)`
-    margin-left: 32px;
-    margin-top: 32px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 32px;
-
-    @media screen and (Max-width: 480px) {
-        margin-left: 16px;
-        margin-top: 8px;
-    };
-`;
-
 export const FormContent = styled.div`
     height: 100%;
     display: flex;
@@ -105,9 +91,32 @@ export const FormButton = styled.button`
     cursor: pointer;
 `;
 
-export const Text = styled.span`
+export const ForgotLink = styled(Link)`
     text-align: center;
+    justify-content: center;
     margin-top: 24px;
     color: #fff;
     font-size: 14px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+`;
+
+export const SignUpLink = styled(Link)`
+    text-align: center;
+    justify-content: center;
+    margin-top: 24px;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
 `;

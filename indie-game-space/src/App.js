@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
@@ -18,12 +18,6 @@ function App() {
   const toggle = () => {
     setIsOpen(!isOpen)
   };
-
-  //games link on click (not working)
-  // const history = useHistory();
-  // const handleHistory1 = () => {
-  //     history.push("/gamesProfile");
-  // };
 
   return(
     <Router>
