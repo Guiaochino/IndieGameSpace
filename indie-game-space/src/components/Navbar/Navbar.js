@@ -1,28 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Nav, NavbarContainer, NavLogo, NavIcon,
-        MobileIcon, NavMenu, NavItem, NavLinks,
-        NavDropdown } from './Navbar.elements.js';
+        MobileIcon, NavMenu, NavItem, NavLinks
+         } from './Navbar.elements.js';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import Dropdown from './Dropdown';
 
 const Navbar = ({ toggle }) => {
-    const [dropdown, setDropdown] = useState(false);
-    const onMouseEnter = () => {
-        if(window.innerWidth < 960) {
-            setDropdown(false);
-        } else {
-            setDropdown(true);
-        }
-    };
-    const onMouseLeave = () => {
-        if(window.innerWidth < 960) {
-            setDropdown(false);
-        } else {
-            setDropdown(false);
-        }
-    };
-
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
@@ -44,11 +27,10 @@ const Navbar = ({ toggle }) => {
                                 </NavLinks>
                             </NavItem>
 
-                            <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                            <NavItem>
                                 <NavLinks to='/developers'> 
-                                    Developers <NavDropdown />
+                                    Developers 
                                 </NavLinks>
-                                {dropdown && <Dropdown />}
                             </NavItem>
                             
                             <NavItem>
@@ -56,7 +38,11 @@ const Navbar = ({ toggle }) => {
                             </NavItem>
 
                             <NavItem>
-                                <NavLinks to='devsSignUp' > Sign Up </NavLinks>
+                                <NavLinks to='devsSignIn' > Login </NavLinks>
+                            </NavItem>
+
+                            <NavItem>
+                                <NavLinks to='gameProfile' > Game </NavLinks>
                             </NavItem>
                         </NavMenu>
                     </NavbarContainer>

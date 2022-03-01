@@ -67,6 +67,14 @@ export default class DevsSignUp extends Component{
                   <FormLabel htmlFor='for'> Password </FormLabel>
                   <FormInput type='password' required onChange={ this.handlePassword }/>
 
+                  <Dropdown>
+                    <DropBtn> Developer Type </DropBtn>
+                      <DropdownContent>
+                        <option> Individual </option>
+                        <option> Group </option>
+                      </DropdownContent>
+                </Dropdown>
+
                   <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
                   <Text> Already have an account? </Text>
               </Form>
