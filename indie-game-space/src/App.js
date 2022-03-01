@@ -10,6 +10,7 @@ import Developers from './pages/Developers';
 import ScrollToTop from './components/ScrollToTop';
 import DevsSignIn from './pages/DevsSignIn';
 import GameProfile from './components/GameProfile/GameProfile';
+import DevsSignUp from './pages/DevsSignUp';
 
 function App() {
   //sidebar function
@@ -34,6 +35,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/developers' component={Developers} />
         <Route path='/devsSignIn' component={DevsSignIn} />
+        <Route path='/devsSignUp' component={DevsSignUp} />
         <Route path='/games' component={Games} />
         <Route path='/gamesProfile' component={GameProfile} />
       </Switch>
