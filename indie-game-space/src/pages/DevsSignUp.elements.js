@@ -1,5 +1,6 @@
 // developers sign up page styled components
 
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -84,9 +85,63 @@ export const FormButton = styled.button`
     cursor: pointer;
 `;
 
-export const Text = styled.span`
+export const SignInLink = styled(Link)`
     text-align: center;
+    justify-content: center;
     margin-top: 24px;
     color: #fff;
     font-size: 14px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+`;
+
+
+export const Text = styled.span`
+    display: flex;
+    height: 35px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #000;
+`;
+
+export const DropBtn = styled.select`
+    background-color: #fff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+
+    &:hover {
+        background-color: #fff;
+    }
+`;
+
+export const Dropdown = styled.div`
+    position: relative;
+    display: inline-block;
+`;
+
+export const DropdownContent = styled.div`
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    option {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    &:hover {
+        background-color: #ddd;
+    }
 `;
