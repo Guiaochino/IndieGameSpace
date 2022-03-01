@@ -36,7 +36,7 @@ class DevsSignIn extends Component {
     data.append("username", this.state.username);
     data.append("password", this.state.password);
 
-    const url = "http://localhost/gamespace-backend/login.php";
+    const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/login.php";
     
 
     axios.post(url, data)
@@ -69,8 +69,6 @@ class DevsSignIn extends Component {
       </>
     );
   }
-
-
 }
 
 export default DevsSignIn;
