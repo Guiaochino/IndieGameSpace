@@ -9,6 +9,14 @@ import axios from 'axios';
 
 class DevsSignUp extends Component{
 
+  state = {
+    username: "",
+    email: "",
+    password: ""
+  };
+
+  
+
   render(){
     return(
       <>
