@@ -31,7 +31,7 @@ function App() {
         <Route path='/devsSignIn' component={DevsSignIn} />
         <Route path='/devsSignUp' component={DevsSignUp} />
         <Route path='/games' component={Games} />
-        <Route path='/gamesProfile' component={GameProfile} />
+        <Route path='/gameProfile' component={GameProfile} />
       </Switch>
     </Router>   
   );

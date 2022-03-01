@@ -45,7 +45,7 @@ export const Form = styled.form`
     z-index: 1;
     display: grid;
     margin: 0 auto;
-    padding: 80px 32px;
+    padding: 40px 32px;
     border-radius: 4px;
     box-shadow: 0 1px 3 px rgba(0, 0, 0, 0.9);
 
@@ -110,36 +110,30 @@ export const Text = styled.span`
     color: #000;
 `;
 
-export const DropBtn = styled.select`
-    background-color: #fff;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+// export const DropBtn = styled.p`
+//     background-color: #fff;
+//     color: white;
+//     padding: 16px;
+//     font-size: 16px;
+//     border: none;
 
-    &:hover {
-        background-color: #fff;
-    }
-`;
+//     &:hover {
+//         background-color: #fff;
+//     }
+// `;
 
-export const Dropdown = styled.div`
-    position: relative;
-    display: inline-block;
-`;
+// export const Dropdown = styled.div`
+//     position: relative;
+//     display: inline-block;
+// `;
 
-export const DropdownContent = styled.div`
-    position: absolute;
+export const DropdownContent = styled.select`
     background-color: #f1f1f1;
+    padding : 10px;
+    margin-bottom: 32px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-
-    option {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
 
     &:hover {
         background-color: #ddd;
