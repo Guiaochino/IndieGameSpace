@@ -38,7 +38,6 @@ class DevsSignIn extends Component {
 
     const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/login.php";
     
-
     axios.post(url, data)
     .then(response => {
       alert(response.data);

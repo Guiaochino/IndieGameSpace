@@ -7,7 +7,7 @@ import { FormContent, FormInput, FormWrap,
         FormLabel, Container, Text } from './DevsSignUp.elements';
 import axios from 'axios';
 
-class DevsSignUp extends Component{
+export default class DevsSignUp extends Component{
 
   state = {
     username: "",
@@ -15,7 +15,26 @@ class DevsSignUp extends Component{
     password: ""
   };
 
-  
+  handleChange = async (change, e) => {
+    
+  }
+
+  handleSubmit = e => {
+    // Put Code Here for Signup
+
+    let data = new FormData();
+    data.append("username", this.state.username);
+    data.append("email", this.state.email);
+    data.append("password", this.state.password);
+
+    const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/signup.php"
+
+    axios.post(url, data)
+    .then(response=> {
+      // what to do after sending of data
+    })
+    .catch(err=>console.log(err));
+  }
 
   render(){
     return(
@@ -33,7 +52,7 @@ class DevsSignUp extends Component{
                   <FormLabel htmlFor='for'> Password </FormLabel>
                   <FormInput type='password' required/>
 
-                  <FormButton type='submit'> Continue </FormButton>
+                  <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
                   <Text> Already have an account? </Text>
               </Form>
             </FormContent>
@@ -44,5 +63,3 @@ class DevsSignUp extends Component{
   }
 
 }
-
-export default DevsSignUp;
