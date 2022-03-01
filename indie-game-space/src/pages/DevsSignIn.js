@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 import TopFiller from '../components/TopFiller/TopFiller';
 import { FormContent, FormInput, FormWrap,
         Icon, Form, FormH1, FormButton,
-        FormLabel, Container, Text } from './DevsSignIn.elements';
+        FormLabel, Container, Text,
+        ForgotLink, SignUpLink } from './DevsSignIn.elements';
 import axios from 'axios';
 
 class DevsSignIn extends Component {
@@ -59,8 +60,9 @@ class DevsSignIn extends Component {
                   <FormInput type='text' required onChange={this.handleUsername} />
                   <FormLabel htmlFor='for'> Passwword </FormLabel>
                   <FormInput type='password' required onChange={this.handlePass}/>
-                  <FormButton type='submit' onClick={this.handleSubmit}> Login </FormButton>
-                  <Text> Forgot Password? </Text>
+                  <FormButton type='submit' onClick={this.handleSubmit}> SIGN IN </FormButton>
+                  <ForgotLink> Forgot Password? </ForgotLink>
+                  <SignUpLink to='DevsSignUp'> Create an Account </SignUpLink>
               </Form>
             </FormContent>
           </FormWrap>

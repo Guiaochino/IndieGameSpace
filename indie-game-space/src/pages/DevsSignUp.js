@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 import TopFiller from '../components/TopFiller/TopFiller';
 import { FormContent, FormInput, FormWrap,
         Form, FormH1, FormButton,
-        FormLabel, Container, Text } from './DevsSignUp.elements';
+        FormLabel, Container, SignInLink, 
+        Dropdown, DropBtn, DropdownContent } from './DevsSignUp.elements';
 import axios from 'axios';
 
 export default class DevsSignUp extends Component{
@@ -12,12 +13,20 @@ export default class DevsSignUp extends Component{
   state = {
     username: "",
     email: "",
-    password: ""
+    password: "",
+    type: ""
   };
 
   handleUsername = async (e) => {
     await this.setState({
       username : e.target.value
+    })
+  }
+
+  handletype = async (e) => {
+    console.log(e.target.value);
+    await this.setState({
+      type: e.target.value,
     })
   }
 
@@ -62,21 +71,22 @@ export default class DevsSignUp extends Component{
                 <FormH1> Sign Up to Create an Account </FormH1>
                   <FormLabel htmlFor='for'> Username </FormLabel>
                   <FormInput type='text' required onChange={ this.handleUsername }/>
+
                   <FormLabel htmlFor='for'> Email </FormLabel>
                   <FormInput type='email' required onChange={ this.handleEmail }/>
+
                   <FormLabel htmlFor='for'> Password </FormLabel>
                   <FormInput type='password' required onChange={ this.handlePassword }/>
 
-                  <Dropdown>
-                    <DropBtn> Developer Type </DropBtn>
-                      <DropdownContent>
-                        <option> Individual </option>
-                        <option> Group </option>
-                      </DropdownContent>
-                </Dropdown>
+                  <FormLabel> Group or Individual Developer </FormLabel>
+                  <DropdownContent onChange={this.handletype}>
+                    <option> -- Select Input --</option>
+                    <option> Individual </option>
+                    <option> Group </option>
+                  </DropdownContent>
 
                   <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
-                  <Text> Already have an account? </Text>
+                  <SignInLink> Already have an account? </SignInLink>
               </Form>
             </FormContent>
           </FormWrap>
