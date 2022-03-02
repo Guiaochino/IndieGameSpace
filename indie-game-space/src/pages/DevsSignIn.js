@@ -3,8 +3,8 @@
 import React, { Component } from 'react'
 import TopFiller from '../components/TopFiller/TopFiller';
 import { FormContent, FormInput, FormWrap,
-        Icon, Form, FormH1, FormButton,
-        FormLabel, Container, Text,
+        Form, FormH1, FormButton,
+        FormLabel, Container,
         ForgotLink, SignUpLink } from './DevsSignIn.elements';
 import axios from 'axios';
 
@@ -58,7 +58,7 @@ class DevsSignIn extends Component {
                 <FormH1> Sign in to your account </FormH1>
                 <FormLabel htmlFor='for'> Username </FormLabel>
                   <FormInput type='text' required onChange={this.handleUsername} />
-                  <FormLabel htmlFor='for'> Passwword </FormLabel>
+                  <FormLabel htmlFor='for'> Password </FormLabel>
                   <FormInput type='password' required onChange={this.handlePass}/>
                   <FormButton type='submit' onClick={this.handleSubmit}> SIGN IN </FormButton>
                   <ForgotLink> Forgot Password? </ForgotLink>
