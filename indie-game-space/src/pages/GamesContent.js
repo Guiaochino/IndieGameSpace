@@ -2,7 +2,6 @@ import React from 'react';
 import { Container } from '../globalStyles';
 import { GamesCont, InfoRow, InfoColumn, TextWrapper, 
         TopLine, Heading, Subtitle, ImgWrapper, Img } from './GamesContent.elements';
-import { handleHistory1 } from '../App';
 
 const GamesContent = ({ lightBg, imgStart, lightTopLine, 
                         lightTextDesc, description, headline, 

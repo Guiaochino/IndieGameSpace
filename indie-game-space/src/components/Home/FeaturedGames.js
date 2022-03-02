@@ -29,7 +29,7 @@ function FeaturedGames() {
                             </FeaturedCardInfo>
                         </FeaturedCard>
 
-                        <FeaturedCard to='/game-link'>
+                        <FeaturedCard to='/gameProfile'>
                             <FeaturedCardInfo>
                                 <FeaturedCardIcon>
                                     <GiRock />
@@ -45,7 +45,7 @@ function FeaturedGames() {
                             </FeaturedCardInfo>
                         </FeaturedCard>
 
-                        <FeaturedCard to='/game-link'>
+                        <FeaturedCard to='/gameProfile'>
                             <FeaturedCardInfo>
                                 <FeaturedCardIcon>
                                     <GiRock />

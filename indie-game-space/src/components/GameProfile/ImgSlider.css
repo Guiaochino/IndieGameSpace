@@ -26,6 +26,7 @@
 .right-arrow:hover {
     border-radius: 50%;
     color: #333333;
+    background-color: #0a5d64;
 }
 
 .left-arrow {
@@ -42,6 +43,7 @@
 .left-arrow:hover {
     border-radius: 50%;
     color: #333333;
+    background-color: #0a5d64;
 }
 
 .slide {

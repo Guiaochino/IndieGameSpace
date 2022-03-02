@@ -5,7 +5,7 @@ import TopFiller from '../components/TopFiller/TopFiller';
 import { FormContent, FormInput, FormWrap,
         Form, FormH1, FormButton,
         FormLabel, Container, SignInLink, 
-        Dropdown, DropBtn, DropdownContent } from './DevsSignUp.elements';
+         DropdownContent } from './DevsSignUp.elements';
 import axios from 'axios';
 
 export default class DevsSignUp extends Component{
@@ -94,5 +94,4 @@ export default class DevsSignUp extends Component{
       </>
     );
   }
-
 }

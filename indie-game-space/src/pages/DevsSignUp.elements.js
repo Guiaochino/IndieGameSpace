@@ -110,23 +110,6 @@ export const Text = styled.span`
     color: #000;
 `;
 
-// export const DropBtn = styled.p`
-//     background-color: #fff;
-//     color: white;
-//     padding: 16px;
-//     font-size: 16px;
-//     border: none;
-
-//     &:hover {
-//         background-color: #fff;
-//     }
-// `;
-
-// export const Dropdown = styled.div`
-//     position: relative;
-//     display: inline-block;
-// `;
-
 export const DropdownContent = styled.select`
     background-color: #f1f1f1;
     padding : 10px;
