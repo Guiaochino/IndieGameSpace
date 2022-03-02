@@ -1,8 +1,9 @@
 import React from 'react';
-import { Nav, NavbarContainer, NavLogo, NavIcon,
+import { Nav, NavLogo, NavIcon,
         MobileIcon, NavMenu, NavItem, NavLinks
          } from './Navbar.elements.js';
 import { FaBars } from 'react-icons/fa';
+import { BiUserCircle } from 'react-icons/bi'
 import { IconContext } from 'react-icons/lib';
 
 const Navbar = ({ toggle }) => {
@@ -10,39 +11,29 @@ const Navbar = ({ toggle }) => {
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
                 <Nav>
-                    <NavbarContainer>
-                        <NavLogo to='/' >
-                            <NavIcon />
-                                IndieGameSpace
-                        </NavLogo>
+                    <NavLogo to='/' >
+                        <NavIcon /> IndieGameSpace </NavLogo>
 
-                        <MobileIcon onClick={toggle} to='/'>
-                            <FaBars />
-                        </MobileIcon>
+                    <MobileIcon onClick={toggle} to='/'> <FaBars /></MobileIcon>
 
-                        <NavMenu> 
-                            <NavItem>
-                                <NavLinks to='/' > 
-                                    Home 
-                                </NavLinks>
-                            </NavItem>
+                    <NavMenu> 
+                        <NavItem>
+                            <NavLinks to='/' > Home </NavLinks>
+                        </NavItem>
 
-                            <NavItem>
-                                <NavLinks to='/developers'> 
-                                    Developers 
-                                </NavLinks>
-                            </NavItem>
+                        <NavItem>
+                            <NavLinks to='/developers'> Developers </NavLinks>
+                        </NavItem>
                             
-                            <NavItem>
-                                <NavLinks to='games' > Games </NavLinks>
-                            </NavItem>
+                        <NavItem>
+                            <NavLinks to='/games' > Games </NavLinks>
+                        </NavItem>
 
-                            <NavItem>
-                                <NavLinks to='devsSignIn' > Login </NavLinks>
-                            </NavItem>
+                        <NavItem>
+                            <NavLinks to='/devsSignIn' > <BiUserCircle /> </NavLinks>
+                        </NavItem>
                             
-                        </NavMenu>
-                    </NavbarContainer>
+                    </NavMenu>
                 </Nav>
             </IconContext.Provider>
         </>

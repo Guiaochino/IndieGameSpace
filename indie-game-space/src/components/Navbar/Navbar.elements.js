@@ -1,34 +1,18 @@
 import styled from "styled-components";
 import { Gi3DGlasses } from "react-icons/gi";
-import { Container } from '../../globalStyles';
 import { Link } from 'react-router-dom';
-import { FaCaretDown } from "react-icons/fa";
 
-export const Nav = styled.nav`
+export const Nav = styled.div`
     background: #0a5d64;
-    height: 80px;
-    margin-top: -80px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 1% 10%;
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
     };
-`;
-
-export const NavbarContainer = styled(Container)`
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    padding: 0 24px;
-    max-width: 1100px;
 `;
 
 export const NavLogo = styled(Link)`
@@ -36,7 +20,7 @@ export const NavLogo = styled(Link)`
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.8em;
     display: flex;
     align-items: center;
 
@@ -47,16 +31,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const NavIcon = styled(Gi3DGlasses)`
-    margin-right: 10px;
-`;
-
-export const NavDropdown = styled(FaCaretDown)`
-    color: #fff;
-
-    &:hover {
-        color: #083b40;
-        transition: all 0.3s ease;
-    };
+    margin-right: 1vw;
 `;
 
 export const MobileIcon = styled.div`
@@ -81,7 +56,6 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
     display: flex;
-    align-items: center;
     list-style: none;
     text-align: center;
 
@@ -100,9 +74,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-    height: 80px;
     border-bottom: 2px solid transparent;
-    font-size: 24px;
     margin-top: 10px;
 
     $:hover {
@@ -117,14 +89,11 @@ export const NavItem = styled.li`
 
 export const NavLinks = styled(Link)`
     color: #fff;
-    display: flex;
-    align-items: center;
     text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
+    margin-left: 2vw;
     cursor: pointer;
-    font-size: 1.5rem;
-    margin-top: 6px;
+    font-size: 1.3em;
+    padding: 1vh 0;
    
     &:hover {
         color: #333333;
