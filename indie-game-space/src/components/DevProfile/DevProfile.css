@@ -1,4 +1,52 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-    background-color: inherit;
+
+/* Base Container */
+.account-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 2vh;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    display: flex;
+    padding: 2vh 1vw;
+}
+
+/* Profile Design */
+.profile-container {
+    border-right: 2px solid #333;
+    padding-right: 1vw;
+}
+
+.profile-container img {
+    width: 100%;
+    margin-top: 3vh;
+    border-radius: 50%;
+}
+
+.profile-container div, h6 {
+    color: darkgrey;
+}
+
+.profile-container div{
+    margin-bottom: 2vh;
+}
+
+.block {
+    width: 100%;;
+}
+
+/* Navigation Styling */
+.navigation {
+    display: flex;
+    font-size: 1.2em;
+}
+
+.nav-element {
+    margin: 0 2vw;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-element:hover {
+    color: #0a5d64;
+    border-bottom: 5px solid #0a5d64;
 }
