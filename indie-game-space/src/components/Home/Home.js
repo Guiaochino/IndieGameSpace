@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <>  
         <TopFiller />
-        <ImgSlider slides={ImgSliderData}/>;
         <HomeContent {...homeObjOne}/>
         <FeaturedDevs />
         <FeaturedGames />
