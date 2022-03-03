@@ -1,10 +1,27 @@
 
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './DevProfile.css';
 import { GiConsoleController } from 'react-icons/gi';
 import { MdPublish } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
+import { BsPencilSquare, BsTrashFill } from 'react-icons/bs';
+
+function GameView(props) {
+  return(
+    <>
+      <div>
+
+        <h4> { props.gameTitle } </h4>
+        <div>
+          <BsPencilSquare />
+          <BsTrashFill/>
+        </div>
+
+      </div>
+    </>
+  );
+};
 
 export default class DevProfile extends Component {
 
@@ -34,7 +51,7 @@ export default class DevProfile extends Component {
               <Link className='nav-element'> <CgProfile /> Profile </Link>
             </div>
 
-            <div> { this.defaultView } </div>
+            <div> <GameView/> </div>
             {/* TODO: List of Published Games by Specific Developer */}
 
             {/* TODO: Form for Publishing Game */}
