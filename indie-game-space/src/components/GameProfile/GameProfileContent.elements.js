@@ -83,3 +83,14 @@ export const Img = styled.img`
     display: inline-block;
     max-height: 500px;
 `;
+
+export const YoutubeBox = styled.video`
+    width: 100%;
+    height: 100%;
+    background-color: #e4e4e4;
+`;
+
+export const VideoWrapper = styled.div`
+    position: relative;
+    margin-top: 20px;
+`;

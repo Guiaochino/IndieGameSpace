@@ -2,13 +2,18 @@ import styled from "styled-components";
 import { Gi3DGlasses } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 
-export const Nav = styled.div`
+
+export const Nav = styled.nav`
     background: #0a5d64;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;    
     padding: 1% 10%;
+    Position: sticky;
+    top: 0;
+    z-index: 999;
+    
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
@@ -20,7 +25,7 @@ export const NavLogo = styled(Link)`
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.8em;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
 
@@ -61,15 +66,6 @@ export const NavMenu = styled.ul`
 
     @media screen and (max-width: 768px) {
         display: none;
-        // flex-direction: column;
-        // width: 100%;
-        // height: 90vh;
-        // position: asolute;
-        // top: 80px;
-        // left: ${({ click }) => (click ? 0 : '-100%')};
-        // opacity: 1;
-        // transition: all 0.5s ease;
-        // background: #333333;
     };
 `;
 
@@ -92,7 +88,7 @@ export const NavLinks = styled(Link)`
     text-decoration: none;
     margin-left: 2vw;
     cursor: pointer;
-    font-size: 1.3em;
+    font-size: 1.3Rem;
     padding: 1vh 0;
    
     &:hover {
@@ -105,13 +101,6 @@ export const NavLinks = styled(Link)`
         border-bottom: 5px solid #083b40;
         color: #083b40;
     };
-
-    // @media screen and (max-width: 960px) {
-    //     text-align: center;
-    //     padding: 1rem;
-    //     width: 100%;
-    //     display: table;
-    // }
 `;
 
 
