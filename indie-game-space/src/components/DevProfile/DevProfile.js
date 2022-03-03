@@ -1,21 +1,24 @@
 
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import './DevProfile.css';
 import { GiConsoleController } from 'react-icons/gi';
 import { MdPublish } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
 import { BsPencilSquare, BsTrashFill } from 'react-icons/bs';
+import defaultImage from '../../images/defaultUser.png'
+import { Form, Button } from 'react-bootstrap';
 
+// Template for the Viewing of Published Games by Developer
 function GameView(props) {
-  return(
+  return (
     <>
-      <div>
+      <div className='view'>
 
-        <h4> { props.gameTitle } </h4>
-        <div>
-          <button> <BsPencilSquare /> Edit </button>
-          <button> <BsTrashFill/> Delete </button>
+        <h4 className='title'> { props.gameTitle } </h4>
+        <div className='rating-container'> { props.rate } </div>
+        <div >
+          <button className='btn btn-dark gep'> <BsPencilSquare /> Edit </button>
+          <button className='btn btn-danger gap-left'> <BsTrashFill /> Delete </button>
         </div>
 
       </div>
@@ -23,49 +26,134 @@ function GameView(props) {
   );
 };
 
-export default class DevProfile extends Component {
+GameView.defaultProps = {
+  gameTitle : 'Sample Title',
+  rate : '0.0'
+};
 
-  state: {
-    
-  };
+// List View of Published Games
+function GameListView() {
 
-  render() {
-    return (
-      <>
-        <div className='account-container'>
-          
-          {/* Profile View */}
-          <div className='profile-container'>
-            <img src='filename.jpg' alt='SomePicture' />
-            <h4> Developer's Name </h4>
-            <div>
-              Members Name / Personal Name
-            </div>
-            <h6> Developer's Email </h6>
-            
-            <button className='btn btn-dark block'> Edit Profile </button>
-          </div>
+  return (
+    <>
+      <GameView />
+      <GameView />
+      <GameView />
+      <GameView />
+      <GameView />
+    </>
+  );
+};
 
-          {/* Games and Post Game View */}
-          <div className='viewing-contianer'>
+// Forms to Publish a Game
+function PublishForm() {
+  return (
+    <>
+      <Form>
+        
+        <Form.Group classname='mb-3'>
+          <Form.Label> Game Name </Form.Label>
+          <Form.Control type='text' placeholder='Game Title' />
+        </Form.Group>
 
-            <div className='navigation'>
-              <Link className='nav-element'> <GiConsoleController /> Games </Link>
-              <Link className='nav-element'> <MdPublish /> Post </Link>
-              <Link className='nav-element'> <CgProfile /> Profile </Link>
-            </div>
+        
+        <Form.Group classname='mb-3'>
+          <Form.Label> Game Description </Form.Label>
+          <Form.Control as='textarea' placeholder='Short Description of Game, that can either be Informational or Eye Catching' style={ { height : '20vh' } }/>
+        </Form.Group>
 
-            <div> <GameView gameTitle="Game Title" /> </div>
-            {/* TODO: List of Published Games by Specific Developer */}
+        
+        <Form.Group classname='mb-3'>
+          <Form.Label> Game Image </Form.Label>
+          <Form.Control type='file'/>
+        </Form.Group>
 
-            {/* TODO: Form for Publishing Game */}
+        
+        <Form.Group classname='mb-3'>
+          <Form.Label> Sample Images </Form.Label>
+          <Form.Control type='file' multiple />
+          <Form.Text> You can select a maximum of 6 images </Form.Text>
+        </Form.Group>
 
-            {/* Display Profile for Edit */}
-          
-          </div>
+        
+        <Form.Group classname='mb-3'>
+          <Form.Label> Trailer Link </Form.Label>
+          <Form.Control type='text' placeholder='Link here...' />
+          <Form.Text> Strictly Youtube Video Link Only </Form.Text>
+        </Form.Group>
+
+        <Button variant='success' type='submit'> Publish </Button>
+
+      </Form>
+    </>
+  );
+};
+
+//  Forms to Edit Profile
+function ProfileForm() {
+  return (
+    <>
+      <div>Profile Form</div>
+    </>
+  );
+};
+
+
+
+export default function DevProfile(props) {
+
+  const [showGame, setShowGame] = useState(true);
+  const [showForm, setShowForm] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+
+  const changeView = (show) => {
+    if (show === "GameListView" && showGame === false) {
+      setShowGame(true);
+      setShowForm(false);
+      setShowProfile(false);
+    } else if (show === "PublishForm" && showForm === false) {
+      setShowGame(false);
+      setShowForm(true);
+      setShowProfile(false);
+    } else if (show === "EditProfile" && showProfile === false) {
+      setShowGame(false);
+      setShowForm(false);
+      setShowProfile(true);
+    }
+  }
+
+  return (
+    <>
+      <div className='account-container'>
+
+        {/* Profile View */}
+        <div className='profile-container'>
+          <img src={ props.user_image } alt='Profile' className='gap-bottom'/>
+          <h4 > { props.devname } </h4>
+          <h6 className='gap-bottom'> { props.devemail } </h6>
+          <button className='btn btn-dark block' onClick={() => changeView("EditProfile")}> Edit Profile </button>
+        </div>
+
+        {/* Games and Post Game View */}
+        <div className='viewing-contianer block'>
+
+          <ul className='navigation block'>
+            <li className='nav-element' onClick={() => changeView("GameListView")}> <GiConsoleController /> Games </li>
+            <li className='nav-element' onClick={() => changeView("PublishForm")}> <MdPublish /> Post Game </li>
+            <li className='nav-element' onClick={() => changeView("EditProfile")}> <CgProfile /> Profile </li>
+          </ul>
+
+          <div className='view-control'> {showGame && (<GameListView />)} {showForm && (<PublishForm />)} {showProfile && (<ProfileForm />)} </div>
 
         </div>
-      </>
-    )
-  }
+
+      </div>
+    </>
+  )
 }
+
+DevProfile.defaultProps = {
+  user_image : defaultImage,
+  devname : "Developer Name",
+  devemail : "someone@email.com"
+};
