@@ -46,6 +46,7 @@ export const TopLine = styled.div`
     line-height 16px;
     letter-spacing: 1.4px;
     margin-bottom: 16px;
+    text-decoration: none;
 `;
 
 export const Heading = styled.h1`
@@ -70,6 +71,7 @@ export const Subtitle = styled.p`
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;
+    text-decoration: none;
     color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
 `;
 

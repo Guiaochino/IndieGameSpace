@@ -14,7 +14,7 @@ const HeroSection = () => {
         <HeroContent>
             <HeroH1> IndieGameSpace </HeroH1>
             <HeroP>
-                content here content here content here content here content here content here content here content here content here content here
+                content here content here content here content here content here content here content here content here content here content here content here content here
             </HeroP>
         </HeroContent>
         

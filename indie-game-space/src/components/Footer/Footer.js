@@ -16,9 +16,7 @@ const Footer = () => {
             Some indie game creators choose to work on a project on their own however, indie game developers usually come in small teams.
             IndieGameSpace serves as a platform for indie video game developers to advertise their creations.
         </FooterSubText>
-
         <FooterSubText> &nbsp; </FooterSubText>
-
         <FooterSubText>
             The main purpose of this is to allow video game enthusiasts to create and view reviews about the featured video games on the website.
             Potential video game investors may also view the profile of various developers and the performance of their creations based on user reviews. 
@@ -44,25 +42,24 @@ const Footer = () => {
         <SocialMedia>
             <SocialMediaWrap>
                 <SocialIcons>
-                    <SocialIconLink href='/' target="_blank" aria-label="Facebook">
+                    <SocialIconLink href='https://www.facebook.com/' target="_blank" aria-label="Facebook">
                         <FaFacebook />
                     </SocialIconLink>
-                    <SocialIconLink href='/' target="_blank" aria-label="Twitter">
+                    <SocialIconLink href='https://www.twitter.com/' target="_blank" aria-label="Twitter">
                         <FaTwitter />
                     </SocialIconLink>
-                    <SocialIconLink href='/' target="_blank" aria-label="Instagram">
+                    <SocialIconLink href='https://www.instagram.com/' target="_blank" aria-label="Instagram">
                         <FaInstagram />
                     </SocialIconLink>
-                    <SocialIconLink href='/' target="_blank" aria-label="Youtube" rel="noopener noreferrer">
+                    <SocialIconLink href='https://www.youtube.com/' target="_blank" aria-label="Youtube" rel="noopener noreferrer">
                         <FaYoutube />
                     </SocialIconLink>
-                    <SocialIconLink href='/' target="_blank" aria-label="Email" rel="noopener noreferrer">
+                    <SocialIconLink href='mailto:kristellemorales@gmail.com?subject=Inquiry from our IndieGameSpace' target="_blank" aria-label="Email" rel="noopener noreferrer">
                         <FaEnvelope />
                     </SocialIconLink>
                 </SocialIcons>
             </SocialMediaWrap>
         </SocialMedia>
-        
     </FooterContainer>
   )
 }

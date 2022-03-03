@@ -7,10 +7,10 @@ import { gamesObjFour, gamesObjOne, gamesObjThree, gamesObjTwo } from './GamesDa
 const Games = () => {
   return (
     <>  
-        <Link to="GameProfile"><GamesContent {...gamesObjOne}/></Link>
-        <Link to="GameProfile"><GamesContent {...gamesObjTwo}/></Link>
-        <Link to="GameProfile"><GamesContent {...gamesObjThree}/></Link>
-        <Link to="GameProfile"><GamesContent {...gamesObjFour}/></Link>
+        <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjOne}/></Link>
+        <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjTwo}/></Link>
+        <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjThree}/></Link>
+        <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjFour}/></Link>
         <Footer />
     </>
   );
