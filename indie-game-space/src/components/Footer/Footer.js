@@ -7,12 +7,22 @@ import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react
 const Footer = () => {
   return (
     <FooterContainer>
-            <FooterSubHeading>
-                About Us
-            </FooterSubHeading>
-            <FooterSubText>
-                content here content here content here content here content here content here 
-            </FooterSubText>
+        <FooterSubHeading>
+            About Us
+        </FooterSubHeading>
+        <FooterSubText>
+            Independent or indie game creators develop games along with a small team of game developers. 
+            These teams usually do not have huge funding for game development unlike huge game companies.
+            Some indie game creators choose to work on a project on their own however, indie game developers usually come in small teams.
+            IndieGameSpace serves as a platform for indie video game developers to advertise their creations.
+        </FooterSubText>
+
+        <FooterSubText> &nbsp; </FooterSubText>
+
+        <FooterSubText>
+            The main purpose of this is to allow video game enthusiasts to create and view reviews about the featured video games on the website.
+            Potential video game investors may also view the profile of various developers and the performance of their creations based on user reviews. 
+        </FooterSubText>
     
         <SocialMedia>
             <SocialMediaWrap>
