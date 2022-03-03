@@ -1,11 +1,9 @@
 //developers sign in page
 
 import React, { Component } from 'react'
-import TopFiller from '../components/TopFiller/TopFiller';
-import { FormContent, FormInput, FormWrap,
-        Form, FormH1, FormButton,
-        FormLabel, Container,
-        ForgotLink, SignUpLink } from './DevsSignIn.elements';
+import { FormInput, Form, FormH1, FormButton,
+        FormLabel, ForgotLink, SignUpLink } from './Form.elements';
+import { Container } from '../globalStyles';
 import axios from 'axios';
 
 class DevsSignIn extends Component {
@@ -49,23 +47,18 @@ class DevsSignIn extends Component {
   render(){
     return(
       <>
-        <TopFiller />
         <Container>
-          <FormWrap>
-            {/* <Icon to="/"> IndieGameSpace </Icon> */}
-            <FormContent>
-              <Form action='login.php'>
-                <FormH1> Sign in to your account </FormH1>
-                <FormLabel htmlFor='for'> Username </FormLabel>
-                  <FormInput type='text' required onChange={this.handleUsername} />
-                  <FormLabel htmlFor='for'> Password </FormLabel>
-                  <FormInput type='password' required onChange={this.handlePass}/>
-                  <FormButton type='submit' onClick={this.handleSubmit}> SIGN IN </FormButton>
-                  <ForgotLink> Forgot Password? </ForgotLink>
-                  <SignUpLink to='DevsSignUp'> Create an Account </SignUpLink>
-              </Form>
-            </FormContent>
-          </FormWrap>
+          
+          <Form action='login.php'>
+            <FormH1> Sign in to your account </FormH1>
+            <FormLabel htmlFor='for'> Username </FormLabel>
+            <FormInput type='text' required onChange={this.handleUsername} />
+            <FormLabel htmlFor='for'> Password </FormLabel>
+            <FormInput type='password' required onChange={this.handlePass}/>                <FormButton type='submit' onClick={this.handleSubmit}> SIGN IN </FormButton>
+            <ForgotLink> Forgot Password? </ForgotLink>
+            <SignUpLink to='DevsSignUp'> Create an Account </SignUpLink>
+          </Form>
+            
         </Container>
       </>
     );

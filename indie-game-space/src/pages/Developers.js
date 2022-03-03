@@ -1,15 +1,14 @@
 import React from 'react'
 import Footer from '../components/Footer/Footer';
-import TopFiller from '../components/TopFiller/TopFiller';
 import DevsContent from './DevsContent';
+import { Link } from 'react-router-dom';
 import { devsObjFour, devsObjOne, devsObjThree, devsObjTwo } from './DevsData';
 
 
 const Developers = () => {
   return (
     <>  
-        <TopFiller />
-        <DevsContent {...devsObjOne}/>
+        <Link to="/DevProfile"><DevsContent {...devsObjOne}/></Link>
         <DevsContent {...devsObjTwo}/>
         <DevsContent {...devsObjThree}/>
         <DevsContent {...devsObjFour}/>

@@ -1,5 +1,4 @@
 import React from 'react';
-import TopFiller from '../TopFiller/TopFiller';
 import GameProfileContent from './GameProfileContent';
 import ImgSlider from './ImgSlider';
 import { ImgSliderData } from './ImgSliderData';
@@ -11,7 +10,6 @@ import { Container } from '../../globalStyles';
 const GameProfile = () => {
   return (
     <>
-      <TopFiller />
       <GameProfileContent />
 
       {/* TODO: YOUTUBE PLAYER GRAY SCREEN ERROR */}

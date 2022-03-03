@@ -3,38 +3,38 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.div`
-    min-height: 692px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    overflow: hidden;
-    background: #f2e6d0;
-`;
+// export const Container = styled.div`
+//     min-height: 692px;
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     z-index: 0;
+//     overflow: hidden;
+//     background: #f2e6d0;
+// `;
 
 export const FormWrap = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-    @media screen and (Max-width: 480px) {
-        height: 80%
-    };
+    // @media screen and (Max-width: 480px) {
+    //     height: 80%
+    // };
 `;
 
 export const FormContent = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-    @media screen and (Max-width: 480px) {
-        padding: 10px;
-    }
+    // @media screen and (Max-width: 480px) {
+    //     padding: 10px;
+    // }
 `;
 
 export const Form = styled.form`
@@ -116,7 +116,6 @@ export const DropdownContent = styled.select`
     margin-bottom: 32px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 
     &:hover {
         background-color: #ddd;
