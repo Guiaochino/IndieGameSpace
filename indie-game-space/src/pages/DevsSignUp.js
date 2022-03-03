@@ -1,11 +1,10 @@
 //developers sign up page
 
 import React, { Component } from 'react'
-import TopFiller from '../components/TopFiller/TopFiller';
-import { FormContent, FormInput, FormWrap,
-        Form, FormH1, FormButton,
-        FormLabel, Container, SignInLink, 
-         DropdownContent } from './DevsSignUp.elements';
+import { FormInput, Form, FormH1, FormButton,
+        FormLabel, SignInLink, 
+         DropdownContent } from './Form.elements';
+import { Container } from '../globalStyles';
 import axios from 'axios';
 
 export default class DevsSignUp extends Component{
@@ -63,33 +62,28 @@ export default class DevsSignUp extends Component{
   render(){
     return(
       <>
-        <TopFiller />
         <Container>
-          <FormWrap>
-            <FormContent>
-              <Form action='#'>
-                <FormH1> Sign Up to Create an Account </FormH1>
-                  <FormLabel htmlFor='for'> Username </FormLabel>
-                  <FormInput type='text' required onChange={ this.handleUsername }/>
+          <Form action='#'>
+            <FormH1> Sign Up to Create an Account </FormH1>
+            <FormLabel htmlFor='for'> Username </FormLabel>
+            <FormInput type='text' required onChange={ this.handleUsername }/>
 
-                  <FormLabel htmlFor='for'> Email </FormLabel>
-                  <FormInput type='email' required onChange={ this.handleEmail }/>
+            <FormLabel htmlFor='for'> Email </FormLabel>
+            <FormInput type='email' required onChange={ this.handleEmail }/>
 
-                  <FormLabel htmlFor='for'> Password </FormLabel>
-                  <FormInput type='password' required onChange={ this.handlePassword }/>
+            <FormLabel htmlFor='for'> Password </FormLabel>
+            <FormInput type='password' required onChange={ this.handlePassword }/>
 
-                  <FormLabel> Group or Individual Developer </FormLabel>
-                  <DropdownContent onChange={this.handletype}>
-                    <option> -- Select Input --</option>
-                    <option> Individual </option>
-                    <option> Group </option>
-                  </DropdownContent>
+            <FormLabel> Group or Individual Developer </FormLabel>
+            <DropdownContent onChange={this.handletype}>
+              <option> -- Select Input --</option>
+              <option> Individual </option>
+              <option> Group </option>
+            </DropdownContent>
 
-                  <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
-                  <SignInLink> Already have an account? </SignInLink>
-              </Form>
-            </FormContent>
-          </FormWrap>
+            <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
+            <SignInLink to='/devsSignIn'> Already have an account? </SignInLink>
+          </Form>
         </Container>
       </>
     );

@@ -4,12 +4,10 @@ import Footer from '../Footer/Footer';
 import FeaturedGames from './FeaturedGames';
 import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
 import FeaturedDevs from './FeaturedDevs';
-import TopFiller from '../TopFiller/TopFiller';
 
 const Home = () => {
   return (
     <>  
-        <TopFiller />
         <HomeContent {...homeObjOne}/>
         <FeaturedDevs />
         <FeaturedGames />

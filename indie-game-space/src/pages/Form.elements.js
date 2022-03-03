@@ -3,55 +3,47 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-    min-height: 692px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    overflow: hidden;
-    background: #f2e6d0;
+// export const Container = styled.div`
+//     height: 100%;
+//     background: #f2e6d0;
     
-    // linear-gradient (
-    //     108deg,
-    //     rgbs(1, 147, 86, 1) 0%,
-    //     rgba(10, 201, 122, 1) 100%
-    // )
-`;
+//     // linear-gradient (
+//     //     108deg,
+//     //     rgbs(1, 147, 86, 1) 0%,
+//     //     rgba(10, 201, 122, 1) 100%
+//     // )
+// `;
 
-export const FormWrap = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+// export const FormWrap = styled.div`
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
 
-    @media screen and (Max-width: 480px) {
-        height: 80%
-    };
-`;
+//     @media screen and (Max-width: 480px) {
+//         height: 80%
+//     };
+// `;
 
-export const FormContent = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+// export const FormContent = styled.div`
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
 
-    @media screen and (Max-width: 480px) {
-        padding: 10px;
-    }
-`;
+//     @media screen and (Max-width: 480px) {
+//         padding: 10px;
+//     }
+// `;
 
 export const Form = styled.form`
     background: #0a5d64;
-    max-width: 400px;
     height: auto;
-    width: 100%;
-    z-index: 1;
+    width: 50%;
     display: grid;
-    margin: 0 auto;
-    padding: 80px 32px;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 5vh 2vw;
     border-radius: 4px;
     box-shadow: 0 1px 3 px rgba(0, 0, 0, 0.9);
 
@@ -118,5 +110,42 @@ export const SignUpLink = styled(Link)`
     &:hover {
         color: #333333;
         transition: all 0.3s ease;
+    }
+`;
+
+export const SignInLink = styled(Link)`
+    text-align: center;
+    justify-content: center;
+    margin-top: 24px;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+`;
+
+
+export const Text = styled.span`
+    display: flex;
+    height: 35px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #000;
+`;
+
+export const DropdownContent = styled.select`
+    background-color: #f1f1f1;
+    padding : 10px;
+    margin-bottom: 32px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    &:hover {
+        background-color: #ddd;
     }
 `;
