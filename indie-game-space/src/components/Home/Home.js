@@ -5,11 +5,13 @@ import FeaturedGames from './FeaturedGames';
 import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './HomeData';
 import FeaturedDevs from './FeaturedDevs';
 import TopFiller from '../TopFiller/TopFiller';
+import StarComment from '../GameProfile/StarComment';
 
 const Home = () => {
   return (
     <>  
         <TopFiller />
+        <StarComment />
         <HomeContent {...homeObjOne}/>
         <FeaturedDevs />
         <FeaturedGames />
