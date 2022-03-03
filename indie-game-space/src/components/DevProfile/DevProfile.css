@@ -38,10 +38,11 @@
 .navigation {
     display: flex;
     font-size: 1.2em;
+    padding : 2vh 2vw;
 }
 
 .nav-element {
-    margin: 0 2vw;
+    /* margin: 0 2vw; */
     color: #333;
     text-decoration: none;
 }

@@ -14,8 +14,8 @@ function GameView(props) {
 
         <h4> { props.gameTitle } </h4>
         <div>
-          <BsPencilSquare />
-          <BsTrashFill/>
+          <button> <BsPencilSquare /> Edit </button>
+          <button> <BsTrashFill/> Delete </button>
         </div>
 
       </div>
@@ -24,6 +24,10 @@ function GameView(props) {
 };
 
 export default class DevProfile extends Component {
+
+  state: {
+    
+  };
 
   render() {
     return (
@@ -51,7 +55,7 @@ export default class DevProfile extends Component {
               <Link className='nav-element'> <CgProfile /> Profile </Link>
             </div>
 
-            <div> <GameView/> </div>
+            <div> <GameView gameTitle="Game Title" /> </div>
             {/* TODO: List of Published Games by Specific Developer */}
 
             {/* TODO: Form for Publishing Game */}
