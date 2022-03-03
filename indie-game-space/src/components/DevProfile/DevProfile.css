@@ -2,17 +2,19 @@
 /* Base Container */
 .account-container {
     width: 80%;
+    height: 100%;
     margin: auto;
     margin-top: 2vh;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
     display: flex;
-    padding: 2vh 1vw;
+    padding: 2vh 0;
+    padding-left: 1vh;
 }
 
 /* Profile Design */
 .profile-container {
-    border-right: 2px solid #333;
+    border-right: 2px solid #666;
     padding-right: 1vw;
 }
 
@@ -34,20 +36,59 @@
     width: 100%;;
 }
 
+.gap-bottom {
+    margin-bottom: 3vh;
+}
+
 /* Navigation Styling */
+
 .navigation {
     display: flex;
     font-size: 1.2em;
-    padding : 2vh 2vw;
+    border-bottom: 2px solid #666;
+    /* padding: 2vh 0; */
 }
 
 .nav-element {
-    /* margin: 0 2vw; */
+    cursor: pointer;
+    width: 15%;
     color: #333;
     text-decoration: none;
+    border-bottom: 5px solid transparent;
+    list-style-type: none;
+    text-align: center;
+    padding: 2vh 0;
 }
 
 .nav-element:hover {
     color: #0a5d64;
     border-bottom: 5px solid #0a5d64;
+}
+
+/* Changing View Styling */
+.view-control {
+    padding: 0 2vw;
+}
+
+/* Game List Viewing Styling */
+.view {
+    background-color: #0a5d64;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 2vw;
+    text-align: center;
+    align-items: center;
+    border-radius: 5pt;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+.gap-left {
+    margin-left: 0.5vw;
+}
+
+.rating-container {
+    color: #333;
+    font-style: italic;
 }
