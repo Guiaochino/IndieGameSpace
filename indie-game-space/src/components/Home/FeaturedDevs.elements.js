@@ -6,7 +6,7 @@ export const FeaturedSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #f2e6d0;
+    background: #ffffff;
 `;
 
 export const FeaturedWrapper = styled.div`

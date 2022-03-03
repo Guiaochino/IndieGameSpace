@@ -20,7 +20,7 @@ const GameProfile = () => {
             {/* <ReactPlayer url="https://www.youtube.com/watch?v=fe9DytkcSlc" playing={false} controls={true} /> */}
           {/* </YoutubeBox>
         </VideoWrapper>
-      </Container> */} */}
+      </Container> */}
 
       <ImgSlider slides={ImgSliderData}/>;
       <Footer />

@@ -4,63 +4,33 @@ import { Gi3DGlasses } from "react-icons/gi";
 
 export const FooterContainer = styled.div`
     background-color: #0a5d64;
-    padding: 4rem 0 2rem 0;
+    padding: 2vh 10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
 
-// export const FooterHeading = styled.h1`
-//     font-family: 'Montserrat', sans-serif;
-//     color: white;
-//     margin-bottom: 24px;
-//     font-size: 48px;
-//     align-items: center;
-//     justify-content: center;
-// `;
-
 export const FooterSubHeading = styled.p`
     font-family: 'Montserrat', sans-serif;
     color: white;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 `;
 
 export const FooterSubText = styled.p`
     color: white;
     margin-bottom: 1px;
+    margin-right: 80px;
+    margin-left: 80px;
     font-size: 14px;
     align-items: center;
     justify-content: center;
+    text-align: center;
 `;
-
-// export const Form = styled.form`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     @media screen and (max-width: 828px) {
-//         width: 80%;
-//         flex-direction: columm;
-//     };
-// `;
-
-// export const FormInput = styled.input`
-//     padding: 10px 20px;
-//     boreder-radius: 2px;
-//     margin-right: 10px;
-//     outline: none;
-//     order: none;
-//     font-size: 16px;
-//     border: 1px solid #ffffff;
-
-//     &::placeholder{
-//         color: #242424;
-//     };
-// `;
 
 export const FooterLinksContainer = styled.div`
     width: 100%;

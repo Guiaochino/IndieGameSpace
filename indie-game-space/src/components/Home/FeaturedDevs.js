@@ -11,7 +11,7 @@ function FeaturedDevs() {
         <IconContext.Provider value={{ color: '#fff', size: 64 }}>
             <FeaturedSection>
                 <FeaturedWrapper>
-                    <FeaturedHeading>Featured Developers</FeaturedHeading>
+                    <FeaturedHeading>New Releases</FeaturedHeading>
                     <FeaturedContainer>
                         <FeaturedCard to='/game-link'>
                             <FeaturedCardInfo>
