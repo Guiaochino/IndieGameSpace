@@ -73,7 +73,7 @@ export const FormInput = styled.input`
     border-radius: 4px;
 `;
 
-export const FormButton = styled.button`
+export const FormButton = styled(Link)`
     background: #083b40;
     padding: 16px 0;
     boder: none;
@@ -81,6 +81,12 @@ export const FormButton = styled.button`
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+    text-decoration : none;
+    text-align : center;
+
+    &:hover {
+        color : white;
+    }
 `;
 
 export const ForgotLink = styled(Link)`

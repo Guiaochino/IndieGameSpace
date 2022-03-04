@@ -4,28 +4,34 @@
 
     require './database.php';
 
-    // $devname = $_POST['username'];
-    // $devpass = $_POST['password'];
-
     $username = $_POST["username"];
     $password = $_POST["password"];
 
+    if (isset($username) && isset($password)){
 
-    $queryLogin = "SELECT devUser, devPass FROM dev_account";
-    $result = mysqli_query($connection, $queryLogin);
+        $queryLogin = "SELECT devUser, devPass FROM dev_account WHERE devUser = '$username'";
+        $result = mysqli_query($connection, $queryLogin);
 
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)){
-            if ($username == $row["devUser"] && password_verify($password, $row["devPass"])){
-                $message = "Login Successful";
-            } else {
-                $message = "Username and Password do not match!";
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)){
+                // Hashed Pass
+                $hashed_pass = sha1($password);
+                $row["devPass"];
+                
+                if ($username == $row["devUser"] && $hashed_pass == $row["devPass"]){
+                    $success = true;
+                } else {
+                    $success = false;
+                }
             }
+        } else {
+            echo "No Data Available";
         }
+
     }
 
-    echo $message;
-    // return $message;
+    echo $success;
+    // echo $username;
+    // echo $password;
 
-    mysqli_close($connection);
 ?>

@@ -4,19 +4,27 @@
 
     require './database.php';
 
-    $getGameList = "SELECT game_profile.game_name, game_profile.game_image, game_profile.game_desc, dev_account.devUser FROM game_profile INNER JOIN dev_account WHERE game_profile.dev_id = dev_account.devID";
+    $getGameList = "SELECT game_profile.game_name, game_profile.game_desc, game_profile.game_image, dev_account.devUser FROM game_profile INNER JOIN dev_account ON game_profile.dev_id = dev_account.devID";
+    // $getGameList = "SELECT * from game_profile";
     $gameList = mysqli_query($connection, $getGameList);
+
     $listing = array();
 
-    if (mysqli_num_rows($gameList)) {
+
+    if (mysqli_num_rows($gameList) > 0) {
+
         while ($game = mysqli_fetch_assoc($gameList)) {
-            $listing[][] = $game;
+            // $listing[] = $game;
+            array_push($listing, $game);
         }
+
+        echo json_encode($listing);
+
     } else {
         echo "No Games Available";
     }
 
-    json_encode($listing);
+    
 
     mysqli_close($connection);
 
