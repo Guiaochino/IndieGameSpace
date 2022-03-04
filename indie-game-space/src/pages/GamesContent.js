@@ -14,10 +14,7 @@ const GamesContent = ({ lightBg, imgStart, lightTopLine,
                     <InfoColumn>
                         <TextWrapper>
                             <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-
-                            {/* clickable link to redirect to game profile page (onClick function not working - Location: App.js) */}
                             <Heading lightText={lightText}>{headline}</Heading> 
-
                             <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
                         </TextWrapper>
                     </InfoColumn>

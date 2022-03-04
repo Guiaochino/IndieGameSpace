@@ -8,7 +8,7 @@ import { devsObjFour, devsObjOne, devsObjThree, devsObjTwo } from './DevsData';
 const Developers = () => {
   return (
     <>  
-        <Link to="/DevProfile"><DevsContent {...devsObjOne}/></Link>
+        <Link to="/DevProfile" style={{ textDecoration: 'none' }}><DevsContent {...devsObjOne}/></Link>
         <DevsContent {...devsObjTwo}/>
         <DevsContent {...devsObjThree}/>
         <DevsContent {...devsObjFour}/>

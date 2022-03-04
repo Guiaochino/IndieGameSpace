@@ -1,0 +1,37 @@
+.MainComponent {
+    padding-top: 1rem;
+    margin: 2rem auto;
+}
+
+.MainComponent-logo {
+    height: 80px;
+}
+
+.Spin {
+    animation: MainComponent-logo-spin infinite 2s linear;
+}
+
+.MainComponent-header {
+    text-align: center;
+    background-color: var(--secondary);
+    padding: 20px;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.MainComponent-title {
+    font-size: 1.5em;
+}
+
+.MainComponent-intro {
+    font-size: large;
+}
+
+@keyframes MainComponent-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

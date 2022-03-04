@@ -58,7 +58,6 @@ export const Heading = styled.h1`
     text-decoration: none;
     display: flex;
     font-weight: bold;
-
 `;
 
 export const Subtitle = styled.p`
