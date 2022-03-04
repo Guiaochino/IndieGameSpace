@@ -16,7 +16,7 @@
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)){
-            if ($username == $row["devUser"] && $password == $row["devPass"]){
+            if ($username == $row["devUser"] && password_verify($password, $row["devPass"])){
                 $message = "Login Successful";
             } else {
                 $message = "Username and Password do not match!";

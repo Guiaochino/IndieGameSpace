@@ -9,7 +9,10 @@
     $dev_pass = $_REQUEST["password"];
     $dev_type = $_REQUEST["type"];
 
-    $query = "INSERT INTO dev_account (devUser, devPass, dev_email, ) VALUES ('". $devname . "','" . $dev_pass . "','". $dev_email ."', '". $dev_type ."')";
+    // Hashed Password for Security
+    $hashed_pass = password_hash($dev_pass, PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO dev_account (devUser, devPass, dev_email, ) VALUES ('$devname', $hashed_pass, '$dev_email', '$dev_type')";
     $result = mysqli_query($connection, $query);
 
     if ($result === TRUE){
