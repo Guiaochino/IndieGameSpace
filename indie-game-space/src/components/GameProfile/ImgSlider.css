@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     bottom: 0;
+    background-color: #333333;
 }
 
 .image {
@@ -18,7 +19,7 @@
     top: 50%;
     right: 32px;
     font-size: 3rem;
-    color: #000;
+    color: #85cca0;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -27,7 +28,7 @@
 .right-arrow:hover {
     border-radius: 50%;
     color: #333333;
-    background-color: #0a5d64;
+    background-color: #85cca0;
 }
 
 .left-arrow {
@@ -35,7 +36,7 @@
     top: 50%;
     left: 32px;
     font-size: 3rem;
-    color: #000;
+    color: #85cca0;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -44,7 +45,7 @@
 .left-arrow:hover {
     border-radius: 50%;
     color: #333333;
-    background-color: #0a5d64;
+    background-color: #85cca0;
 }
 
 .slide {

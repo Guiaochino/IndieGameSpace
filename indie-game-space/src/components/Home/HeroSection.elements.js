@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
 
 export const HeroContainer = styled.div`
     background: #0c0c0c;
@@ -39,8 +40,8 @@ export const HeroOverlay = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #333333;
-    opacity: 75%;
+    background: #0a5d64;
+    opacity: 30%;
 `;
 
 export const HeroContent = styled.div`
@@ -75,6 +76,7 @@ export const HeroP = styled.p`
     font-size: 24px;
     text-align: center;
     max-width: 600px;
+    line-height: 10px;
 
     @media screen and (max-width: 760px) {
         font-size: 40px;
@@ -82,5 +84,37 @@ export const HeroP = styled.p`
 
     @media screen and (max-width: 480px) {
         font-size: 32px;
+    }
+`;
+
+export const HeroBtnWrapper = styled.div`
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const Button = styled(Link)`
+    border-radius: 50px;
+    background: #85cca0;
+    white-space: nowrap;
+    padding: 14px 14px;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    width: 200px;
+    font-weight: bold;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #548a69;
+        color: #fff;
     }
 `;

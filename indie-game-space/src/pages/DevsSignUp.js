@@ -81,7 +81,7 @@ export default class DevsSignUp extends Component{
               <option> Group </option>
             </DropdownContent>
 
-            <FormButton type='submit' onClick={this.handleSubmit}> Continue </FormButton>
+            <FormButton type='submit' onClick={this.handleSubmit}> SIGN UP </FormButton>
             <SignInLink to='/devsSignIn'> Already have an account? </SignInLink>
           </Form>
         </Container>

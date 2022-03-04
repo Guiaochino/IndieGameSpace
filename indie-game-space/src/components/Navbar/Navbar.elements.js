@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { Gi3DGlasses } from "react-icons/gi";
 import { Link } from 'react-router-dom';
+import { BiUserCircle } from "react-icons/bi";
+import { FaPowerOff } from "react-icons/fa";
 
 
 export const Nav = styled.nav`
-    background: #0a5d64;
+    background: #85cca0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -13,7 +15,6 @@ export const Nav = styled.nav`
     Position: sticky;
     top: 0;
     z-index: 999;
-    
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
@@ -37,6 +38,37 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled(Gi3DGlasses)`
     margin-right: 1vw;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+`;
+
+export const Login = styled(BiUserCircle)`
+    margin-right: 0;
+    color: #fff;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
+`;
+
+export const LogOut = styled(FaPowerOff)`
+    margin-right: 0;
+    color: #fff;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
+    }
 `;
 
 export const MobileIcon = styled.div`
@@ -53,7 +85,7 @@ export const MobileIcon = styled.div`
         color: #fff;
 
         &:hover {
-            color: #000000;
+            color: #333333;
             transition: all 0.3s ease;
         }
     };
@@ -94,12 +126,22 @@ export const NavLinks = styled(Link)`
     &:hover {
         color: #333333;
         transition: all 0.3s ease;
-        border-bottom: 5px solid #083b40;
+        border-bottom: 5px solid #333333;
     };
+`;
 
-    &:active.active {
-        border-bottom: 5px solid #083b40;
-        color: #083b40;
+export const NavButton = styled.button`
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2vw;
+    cursor: pointer;
+    font-size: 1.3Rem;
+    background: none;
+    border: none;
+   
+    &:hover {
+        color: #333333;
+        transition: all 0.3s ease;
     };
 `;
 

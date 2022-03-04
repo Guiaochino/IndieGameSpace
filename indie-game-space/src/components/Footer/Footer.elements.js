@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Gi3DGlasses } from "react-icons/gi";
 
 export const FooterContainer = styled.div`
-    background-color: #0a5d64;
+    background-color: #85cca0;
     padding: 2vh 10vw;
     display: flex;
     flex-direction: column;
