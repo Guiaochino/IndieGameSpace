@@ -98,7 +98,7 @@ export const ImgWrapper = styled.div`
 export const Img = styled.img`
     padding-right: 0;
     border: 0;
-    width: 900px;
-    height: 260px;
+    width: 100%;
+    height: 100%;
     box-shadow: 8px 8px 15px #85cca0;
 `;

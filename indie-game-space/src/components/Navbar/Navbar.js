@@ -1,9 +1,8 @@
 import React from 'react';
-import { Nav, NavLogo, NavIcon,
+import { Nav, NavLogo, NavIcon, LogOut, NavButton,
         MobileIcon, NavMenu, NavItem, NavLinks, Login
          } from './Navbar.elements.js';
 import { FaBars } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
 
 const Navbar = ({ toggle }) => {
     return (
@@ -30,6 +29,10 @@ const Navbar = ({ toggle }) => {
 
                     <NavItem>
                         <NavLinks to='/devsSignIn' > <Login /> </NavLinks>
+                    </NavItem>
+
+                    <NavItem>
+                        <NavButton> <LogOut /> </NavButton>
                     </NavItem>
                         
                 </NavMenu>
