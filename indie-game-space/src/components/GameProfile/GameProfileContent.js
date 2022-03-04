@@ -13,9 +13,16 @@ const GameProfileContent = () => {
                 <InfoRow>
                     <InfoColumn>
                         <TextWrapper>
-                            <TopLine> [Game Genre Here] </TopLine>
-                            <Heading> [GAME TITLE HERE] </Heading> 
-                            <Subtitle> [Game Deiscription Here]</Subtitle>
+                            <TopLine> FJRD Interactive </TopLine>
+                            <Heading> Among Trees </Heading> 
+                            <Subtitle> Genre: Adventure, Indie, Simulation </Subtitle>
+                            <Subtitle> 
+                                Escape to an enchanting, living sandbox surrounded by 
+                                wildlife and nature. Scavenge materials and craft tools to turn your 
+                                small cabin into a warm, well-supplied home. Survive by fishing, cooking 
+                                and growing your own food. Be careful though, the forest is as dangerous 
+                                as it is wonderful.
+                            </Subtitle>
                         </TextWrapper>
                     </InfoColumn>
                 

@@ -1,43 +1,40 @@
 import React from 'react';
 import { Nav, NavLogo, NavIcon,
-        MobileIcon, NavMenu, NavItem, NavLinks
+        MobileIcon, NavMenu, NavItem, NavLinks, Login
          } from './Navbar.elements.js';
 import { FaBars } from 'react-icons/fa';
-import { BiUserCircle } from 'react-icons/bi'
 import { IconContext } from 'react-icons/lib';
 
 const Navbar = ({ toggle }) => {
     return (
         <>
-            <IconContext.Provider value={{ color: '#fff' }}>
-                <Nav>
-                    <NavLogo to='/' >
-                        <NavIcon /> IndieGameSpace 
-                    </NavLogo>
+            <Nav>
+                <NavLogo to='/' >
+                    <NavIcon /> IndieGameSpace 
+                </NavLogo>
 
-                    <MobileIcon onClick={toggle} to='/'> <FaBars /> </MobileIcon>
+                <MobileIcon onClick={toggle} to='/'> <FaBars /> </MobileIcon>
 
-                    <NavMenu> 
-                        <NavItem>
-                            <NavLinks to='/' > Home </NavLinks>
-                        </NavItem>
+                <NavMenu> 
+                    <NavItem>
+                        <NavLinks to='/' > Home </NavLinks>
+                    </NavItem>
 
-                        <NavItem>
-                            <NavLinks to='/developers'> Developers </NavLinks>
-                        </NavItem>
-                            
-                        <NavItem>
-                            <NavLinks to='/games' > Games </NavLinks>
-                        </NavItem>
+                    <NavItem>
+                        <NavLinks to='/developers'> Developers </NavLinks>
+                    </NavItem>
+                        
+                    <NavItem>
+                        <NavLinks to='/games' > Games </NavLinks>
+                    </NavItem>
 
-                        <NavItem>
-                            <NavLinks to='/devsSignIn' > <BiUserCircle /> </NavLinks>
-                        </NavItem>
-                            
-                    </NavMenu>
-                </Nav>
-            </IconContext.Provider>
-        </>
+                    <NavItem>
+                        <NavLinks to='/devsSignIn' > <Login /> </NavLinks>
+                    </NavItem>
+                        
+                </NavMenu>
+            </Nav>
+    </>
     );
 };
 
