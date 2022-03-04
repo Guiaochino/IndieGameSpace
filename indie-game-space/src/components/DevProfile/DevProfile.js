@@ -90,10 +90,24 @@ function PublishForm() {
 };
 
 //  Forms to Edit Profile
-function ProfileForm() {
+function Profile() {
   return (
     <>
-      <div>Profile Form</div>
+      <div>
+
+        <div>
+          <h3> Developer Name </h3>
+          <h6> Developer Email </h6>
+        </div>
+
+        <div>
+          <h6> Dev type </h6>
+          <h6> media-links \\ NOTE: Need Backend </h6>
+        </div>
+
+        <div> Members \\ NOTE: Need Backend </div>
+
+      </div>
     </>
   );
 };
@@ -115,7 +129,7 @@ export default function DevProfile(props) {
       setShowGame(false);
       setShowForm(true);
       setShowProfile(false);
-    } else if (show === "EditProfile" && showProfile === false) {
+    } else if (show === "Profile" && showProfile === false) {
       setShowGame(false);
       setShowForm(false);
       setShowProfile(true);
@@ -131,7 +145,9 @@ export default function DevProfile(props) {
           <img src={ props.user_image } alt='Profile' className='gap-bottom'/>
           <h4 > { props.devname } </h4>
           <h6 className='gap-bottom'> { props.devemail } </h6>
-          <button className='btn btn-dark block' onClick={() => changeView("EditProfile")}> Edit Profile </button>
+
+          {/* TODO: Link Button to Edit Profle Form */}
+          <button className='btn btn-dark block' > Edit Profile </button>
         </div>
 
         {/* Games and Post Game View */}
@@ -140,10 +156,10 @@ export default function DevProfile(props) {
           <ul className='navigation block'>
             <li className='nav-element' onClick={() => changeView("GameListView")}> <GiConsoleController /> Games </li>
             <li className='nav-element' onClick={() => changeView("PublishForm")}> <MdPublish /> Post Game </li>
-            <li className='nav-element' onClick={() => changeView("EditProfile")}> <CgProfile /> Profile </li>
+            <li className='nav-element' onClick={() => changeView("Profile")}> <CgProfile /> Profile </li>
           </ul>
 
-          <div className='view-control'> {showGame && (<GameListView />)} {showForm && (<PublishForm />)} {showProfile && (<ProfileForm />)} </div>
+          <div className='view-control'> {showGame && (<GameListView />)} {showForm && (<PublishForm />)} {showProfile && (<Profile />)} </div>
 
         </div>
 
