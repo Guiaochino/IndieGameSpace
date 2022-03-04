@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from '../globalStyles';
 import { GamesCont, InfoRow, InfoColumn, TextWrapper, 
-        TopLine, Heading, Subtitle, ImgWrapper, Img } from './GamesContent.elements';
+        TopLine, Heading, Subtitle, ImgWrapper, Img, Genre } from './GamesContent.elements';
 
-const GamesContent = ({ lightBg, imgStart, lightTopLine, 
-                        lightTextDesc, description, headline, 
-                        lightText, topLine, img, alt, start }) => {
+const GamesContent = ({ lightBg, imgStart, lightTopLine, lightTextGenre,
+                        lightTextDesc, description, headline, textAlign,
+                        lightText, topLine, img, alt, start, genre, padding }) => {
   return (
     <>
         <GamesCont lightBg={lightBg}>
@@ -13,13 +13,14 @@ const GamesContent = ({ lightBg, imgStart, lightTopLine,
                 <InfoRow imgStart={imgStart}>
                     <InfoColumn>
                         <TextWrapper>
-                            <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-                            <Heading lightText={lightText}>{headline}</Heading> 
-                            <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+                            <TopLine lightTopLine={lightTopLine} textAlign={textAlign}> {topLine} </TopLine>
+                            <Heading lightText={lightText} textAlign={textAlign}> {headline} </Heading>
+                            <Genre lightTextGenre={lightTextGenre} textAlign={textAlign}> {genre} </Genre>
+                            <Subtitle lightTextDesc={lightTextDesc} textAlign={textAlign}> {description} </Subtitle>
                         </TextWrapper>
                     </InfoColumn>
                     <InfoColumn>
-                        <ImgWrapper start={start}>
+                        <ImgWrapper start={start} padding={padding}>
                             <Img src={img} alt={alt} />
                         </ImgWrapper>
                     </InfoColumn>

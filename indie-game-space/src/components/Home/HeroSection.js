@@ -1,7 +1,8 @@
 import React from 'react';
 import Video from '../../images/Video.mp4';
 import { HeroContainer, HeroBg, VideoBg,
-        HeroContent, HeroH1, HeroP, HeroOverlay } from './HeroSection.elements';
+        HeroContent, HeroH1, HeroP, HeroOverlay,
+        HeroBtnWrapper, Button } from './HeroSection.elements';
 
 const HeroSection = () => {
   return (
@@ -13,9 +14,13 @@ const HeroSection = () => {
         
         <HeroContent>
             <HeroH1> IndieGameSpace </HeroH1>
-            <HeroP>
-                content here content here content here content here content here content here content here content here content here content here content here content here
-            </HeroP>
+            <HeroP> Welcome to IndieGameSpace </HeroP>
+            <HeroP> The Home of Indepdendent Game Developers </HeroP>
+            <HeroBtnWrapper>
+              <Button to='games'>
+                Discover Games 
+              </Button>
+            </HeroBtnWrapper>
         </HeroContent>
         
     </HeroContainer>

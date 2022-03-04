@@ -62,9 +62,11 @@ const StarComment = () => {
 
 const styles = {
     container: {
+      margin: "40px 0",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center"
+      alignItems: "center",
+      height: "260px"
     },
     stars: {
       display: "flex",

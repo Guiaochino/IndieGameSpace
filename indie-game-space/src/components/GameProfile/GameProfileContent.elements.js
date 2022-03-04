@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const GamesCont = styled.div`
     color: #ffffff;
-    padding: 160px 0;
+    padding: 80px 0;
     background: #333333;
 `;
 
@@ -52,7 +52,7 @@ export const Heading = styled.h1`
     margin-bottom: 24px;
     font-size: 48px;
     line-height: 1.1;
-    color: #0a5d64;
+    color: #85cca0;
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
@@ -64,12 +64,14 @@ export const Subtitle = styled.p`
     max-width: 440px;
     margin-bottom: 35px;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 40px;
     color: #a9b3c1;
 `;
 
 export const ImgWrapper = styled.div`
     max-width: 555px;
+    padding-bottom: 25px;
+    padding-left: 25px;
     display: flex;
     justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')}
 `;
@@ -77,19 +79,19 @@ export const ImgWrapper = styled.div`
 export const Img = styled.img`
     padding-right: 0;
     border: 0;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     vertical-align: middle;
     display: inline-block;
     max-height: 500px;
-`;
-
-export const YoutubeBox = styled.video`
-    width: 100%;
-    height: 100%;
-    background-color: #e4e4e4;
+    box-shadow: 8px 8px 15px #85cca0;
 `;
 
 export const VideoWrapper = styled.div`
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
 `;

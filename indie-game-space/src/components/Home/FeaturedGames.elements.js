@@ -8,6 +8,7 @@ export const FeaturedSection = styled.div`
     justify-content: center;
     background: #fff;
     margin-bottom: 50px;
+    width: 100%;
 `;
 
 export const FeaturedWrapper = styled.div`
@@ -15,6 +16,7 @@ export const FeaturedWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
 
     @media screen and (max-width: 960px) {
         margin: 0 30px;
@@ -36,6 +38,7 @@ export const FeaturedContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     @media screen and (max-width: 960px) {
         display: flex;
@@ -47,14 +50,37 @@ export const FeaturedContainer = styled.div`
 `;
 
 export const FeaturedCard = styled(Link)`
-    background: #0a5d64;
+    background: #333333;
     box-shadow: 0 6px 20px rgba(61, 92, 87, 0.8);
     width: 280px;
     height: 500px;
     text-decoration: none; border-radius: 4px;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &:nth-child(1) {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
 
     &:nth-child(2) {
-        margin: 24px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    &:nth-child(3) {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    &:nth-child(4) {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    &:nth-child(5) {
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     &:hover {
@@ -64,9 +90,8 @@ export const FeaturedCard = styled(Link)`
         color: #1c2237;
     }
 
-    @media screen and (max-width: 960px) {
-        width: 90%;
-
+    @media screen and (max-width: 1200px) {
+        width: 100%;
         &:hover {
             transform: none;
         }
@@ -91,8 +116,11 @@ export const FeaturedCardPlan = styled.h3`
     font-size: 24px;
 `;
 
-export const FeaturedCardCost = styled.h4`
-    font-size: 40px;
+export const FeaturedCardCost = styled.p`
+    font-size: 36px;
+    align-items: center;
+    justify-content: center;
+    color: #85cca0;
 `;
 
 export const FeaturedCardLength = styled.p`
@@ -106,9 +134,18 @@ export const FeaturedCardFeatures = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #a9b3c1;
+    justify-content: center;
+    color: #fff;
 `;
 
 export const FeaturedCardFeature = styled.li`
     margin-bottom: 10px;
+`;
+
+export const ImgIcon = styled.img`
+    width: 120px;
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 10px;
 `;
