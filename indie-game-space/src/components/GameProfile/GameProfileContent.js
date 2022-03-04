@@ -1,7 +1,8 @@
 import React from 'react';
+import { FaStar } from 'react-icons/fa';
 import { Container } from '../../globalStyles';
-import { GamesCont, InfoRow, InfoColumn, TextWrapper, 
-        TopLine, Heading, Subtitle, ImgWrapper, Img
+import { GamesCont, InfoRow, InfoColumn, TextWrapper, Rating,
+        TopLine, Heading, Subtitle, ImgWrapper, Img, Genre
          } from './GameProfileContent.elements';
 
 
@@ -15,7 +16,8 @@ const GameProfileContent = () => {
                         <TextWrapper>
                             <TopLine> FJRD Interactive </TopLine>
                             <Heading> Among Trees </Heading> 
-                            <Subtitle> Genre: Adventure, Indie, Simulation </Subtitle>
+                            <Genre> Genre: Adventure, Indie, Simulation </Genre>
+                            <Rating> Rating: 3.5/5 <FaStar /></Rating>
                             <Subtitle> 
                                 Escape to an enchanting, living sandbox surrounded by 
                                 wildlife and nature. Scavenge materials and craft tools to turn your 

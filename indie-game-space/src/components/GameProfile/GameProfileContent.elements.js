@@ -33,10 +33,10 @@ export const InfoColumn = styled.div`
 export const TextWrapper = styled.div`
     max-width: 540 px;
     padding-top: 0;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 
     @media screen and (max-width: 768px) {
-        padding-bottom: 65px;
+        padding-bottom: 10px;
     };
 `;
 
@@ -64,6 +64,18 @@ export const Subtitle = styled.p`
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 40px;
+    color: #a9b3c1;
+`;
+
+export const Genre = styled.p`
+    max-width: 440px;
+    font-size: 18px;
+    color: #a9b3c1;
+`;
+
+export const Rating = styled.p`
+    max-width: 440px;
+    font-size: 18px;
     color: #a9b3c1;
 `;
 
