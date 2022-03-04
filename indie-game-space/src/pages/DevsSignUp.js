@@ -23,9 +23,8 @@ export default class DevsSignUp extends Component{
   }
 
   handletype = async (e) => {
-    console.log(e.target.value);
     await this.setState({
-      type: e.target.value,
+      type: e.target.value
     })
   }
 
@@ -49,6 +48,7 @@ export default class DevsSignUp extends Component{
     data.append("username", this.state.username);
     data.append("email", this.state.email);
     data.append("password", this.state.password);
+    data.append("type", this.state.type)
 
     const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/signup.php"
 

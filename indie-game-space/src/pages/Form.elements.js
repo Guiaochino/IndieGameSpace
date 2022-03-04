@@ -41,19 +41,19 @@ export const FormInput = styled.input`
     border-radius: 4px;
 `;
 
-export const FormButton = styled.button`
-    background: #85cca0;
+export const FormButton = styled(Link)`
+    background: #083b40;
     padding: 16px 0;
     boder: none;
     border-radius: 25px;
     color: #333333;
     font-size: 20px;
     cursor: pointer;
+    text-decoration : none;
+    text-align : center;
 
     &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #548a69;
-        color: #fff;
+        color : white;
     }
 `;
 
