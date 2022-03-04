@@ -54,7 +54,6 @@ export const Heading = styled.h1`
     line-height: 1.1;
     color: #85cca0;
     justify-self: start;
-    cursor: pointer;
     text-decoration: none;
     display: flex;
     font-weight: bold;
