@@ -6,7 +6,7 @@ import { GamesCont, InfoRow, InfoColumn, TextWrapper, Rating,
          } from './GameProfileContent.elements';
 
 
-const GameProfileContent = () => {
+const GameProfileContent2 = () => {
   return (
     <>
         <GamesCont>
@@ -14,23 +14,24 @@ const GameProfileContent = () => {
                 <InfoRow>
                     <InfoColumn>
                         <TextWrapper>
-                            <TopLine> FJRD Interactive </TopLine>
-                            <Heading> Among Trees </Heading> 
+                            <TopLine> Studio MDHR Entertainment Inc. </TopLine>
+                            <Heading> Cuphead </Heading> 
                             <Genre> Genre: Adventure, Indie, Simulation </Genre>
-                            <Rating> Rating: 3.5/5 <FaStar /></Rating>
+                            <Rating> Rating: 4/5 <FaStar /></Rating>
                             <Subtitle> 
-                                Escape to an enchanting, living sandbox surrounded by 
-                                wildlife and nature. Scavenge materials and craft tools to turn your 
-                                small cabin into a warm, well-supplied home. Survive by fishing, cooking 
-                                and growing your own food. Be careful though, the forest is as dangerous 
-                                as it is wonderful.
+                                Cuphead is a classic run and gun action game heavily focused 
+                                on boss battles. Inspired by cartoons of the 1930s, 
+                                the visuals and audio are painstakingly created with 
+                                the same techniques of the era, i.e. 
+                                traditional hand drawn cel animation, watercolor 
+                                backgrounds, and original jazz recordings.
                             </Subtitle>
                         </TextWrapper>
                     </InfoColumn>
                 
                     <InfoColumn>
                         <ImgWrapper>
-                            <Img src="https://worldofpcgames.co/wp-content/uploads/2021/11/Among-Trees-Free-Download-By-Worldofpcgames.jpg" />
+                            <Img src="https://upload.wikimedia.org/wikipedia/en/b/be/Cuphead_%28artwork%29.jpg" />
                         </ImgWrapper>
                     </InfoColumn>
                 </InfoRow>
@@ -40,4 +41,4 @@ const GameProfileContent = () => {
   );
 };
 
-export default GameProfileContent;
+export default GameProfileContent2;
