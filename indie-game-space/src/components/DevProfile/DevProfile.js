@@ -36,13 +36,6 @@ GameView.defaultProps = {
 // List View of Published Games
 function GameListView() {
 
-  const [devGames, setdevGames] = useState();
-
-  const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloperGames.php";
-
-  axios.get(url)
-  .then()
-
   return (
     <>
       <GameView gameTitle="Game Name" rate="" />
@@ -121,13 +114,13 @@ function PublishForm() {
     data.append("samp_img", sampImg);
     data.append("link", link);
 
-    const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/publishGame.php";
+    // const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/publishGame.php";
 
-    axios.post(url, data)
-    .then(response => {
-      console.log(response.data);
-    })
-    .catch(err => console.log(err))
+    // axios.post(url, data)
+    // .then(response => {
+    //   console.log(response.data);
+    // })
+    // .catch(err => console.log(err))
 
   }
 
@@ -210,7 +203,6 @@ export default function DevProfile(props) {
   const [showForm, setShowForm] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [userProfile, setUserProfile] = useState();
-  const [userlogged, setUserLogged] = useState();
 
   const { handle } = useParams();
   const location = useLocation();
@@ -232,16 +224,21 @@ export default function DevProfile(props) {
     }
   }
 
-  const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php"
+  const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php";
 
   useEffect(() => {
-    setUserLogged({ username : user })
-    axios.post(url, userlogged)
-    .then(response => {
 
+    let isMounted = true;
+
+    // Put data into FormData
+    let data = new FormData();
+    data.append("username", user);
+
+
+    axios.post(url, data)
+    .then(response => {
       console.log(response.data);
       setUserProfile(response.data);
-      
     })
     .catch(err => console.log(err))
   }, [])
@@ -252,9 +249,9 @@ export default function DevProfile(props) {
 
         {/* Profile View */}
         <div className='profile-container'>
-          <img src={ props.user_image } alt='Profile' className='gap-bottom'/>
-          <h4 > { user } </h4>
-          <h6 className='gap-bottom'> { props.devemail } </h6>
+          <img src={ userProfile[0].profile_picture ? userProfile[0].profile_picture : props.user_image } alt='Profile' className='gap-bottom'/>
+          <h4 > { userProfile[0].devUser ? userProfile[0].devUser : props.devname } </h4>
+          <h6 className='gap-bottom'> { userProfile[0].dev_email ? userProfile[0].dev_email : props.devemail } </h6>
 
           {/* TODO: Link Button to Edit Profle Form */}
           <button className='btn btn-dark block' > Edit Profile </button>

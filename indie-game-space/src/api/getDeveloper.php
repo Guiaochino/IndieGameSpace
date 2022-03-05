@@ -4,34 +4,26 @@
 
     require './database.php';
 
-    if (isset($_SESSION)){
+    $userlogged = $_REQUEST["username"];
 
-        $userlogged = $_SESSION["logged"];
+    $getDeveloper = "SELECT profile_picture, devUser, dev_email FROM dev_account WHERE devUser = '$userlogged'";
+    $dev = mysqli_query($connection, $getDeveloper);
 
-        $getDeveloper = "SELECT profile_picture, devUser, dev_email FROM dev_account WHERE dev_account = '$userlogged'";
-        $dev = mysqli_query($connection, $getDeveloper);
+    $res_arr = array();
 
-        $res_arr = array();
+    if (mysqli_num_rows($dev) > 0) {
 
-        if (isset($userlogged)){
-            if (mysqli_num_rows($dev) > 0) {
-
-                while ($row = mysqli_fetch_assoc($dev)){
-                    $res_arr[] = implode($row);
-                }
-
-            } else {
-
-                echo "No Information Provided";
-
-            }
+        while ($row = mysqli_fetch_object($dev)){
+            $res_arr[] = $row;
         }
 
-        echo implode($res_arr);
+        echo json_encode($res_arr, JSON_PRETTY_PRINT);
 
-    }
+    } else {
 
-    
+        echo "No Information Provided";
+
+    } 
 
     mysqli_close($connection);
 ?>
