@@ -1,18 +1,9 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
 import GlobalStyle from './globalStyles';
-import Sidebar from './components/Sidebar/Sidebar';
-import Games from './pages/Games';
-import Developers from './pages/Developers';
-import ScrollToTop from './components/ScrollToTop';
-import DevsSignIn from './pages/DevsSignIn';
-import GameProfile from './components/GameProfile/GameProfile';
-import DevsSignUp from './pages/DevsSignUp';
-import DevProfile from './components/DevProfile/DevProfile';
-import GameProfile2 from './components/GameProfile/GameProfile2';
+import {Games, Developers, DevsSignIn, DevsSignUp} from './pages/Index';
+import { Navbar, Home, Sidebar, ScrollToTop, GameProfile, DevProfile, PublishForm }  from './components/Index';
 
 function App() {
   //sidebar function
@@ -21,21 +12,32 @@ function App() {
     setIsOpen(!isOpen)
   };
 
+  const [user, setUser] = useState();
+  const [log, setLog] = useState(false);
+
   return(
     <Router>
       <ScrollToTop />
       <GlobalStyle />
       <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle} />
+      <Navbar toggle={toggle} logStatus={false} />
       <Switch>
-        <Route path='/' exact component={Home} />
+        
+        <Route 
+        exact 
+        path='/' 
+        render={(props) => (
+          <Home {...props} logStatus={true} user={user} />
+        )} />
+
         <Route path='/developers' component={Developers} />
         <Route path='/devsSignIn' component={DevsSignIn} />
         <Route path='/devsSignUp' component={DevsSignUp} />
         <Route path='/games' component={Games} />
         <Route path='/gameProfile' component={GameProfile} />
-        <Route path='/gameProfile2' component={GameProfile2} />
-        <Route path='/DevProfile' component={DevProfile} />
+        {/* <Route path='/gameProfile2' component={GameProfile2} /> */}
+        <Route path='/Profile' component={DevProfile} />
+        <Route path='/publishGame' component={PublishForm} />
       </Switch>
     </Router>   
   );

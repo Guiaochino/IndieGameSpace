@@ -3,7 +3,7 @@ import { Gi3DGlasses } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import { BiUserCircle } from "react-icons/bi";
 import { FaPowerOff } from "react-icons/fa";
-
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
 export const Nav = styled.nav`
     background: #85cca0;
@@ -114,6 +114,11 @@ export const NavItem = styled.li`
         border: none;
     }
 `;
+
+// For Dropdown of Signup naf Login
+export const DropMenu = styled(DropdownButton)``;
+
+export const DropItem = styled(Dropdown.Item)``;
 
 export const NavLinks = styled(Link)`
     color: #fff;

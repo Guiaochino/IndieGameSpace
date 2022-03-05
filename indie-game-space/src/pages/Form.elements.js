@@ -53,15 +53,9 @@ export const FormButton = styled(Link)`
     text-align: center;
 
     &:hover {
-<<<<<<< HEAD
         color : #fff;
         background : #548a69;
         transition : all 0.2s ease-in-out;
-=======
-        color: #fff;
-        background: #548a69;
-        transition: all 0.2s ease-in-out;
->>>>>>> d98827f6a796cc442fb8347aceefddef1c231cbf
     }
 `;
 
