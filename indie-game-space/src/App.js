@@ -12,6 +12,7 @@ import DevsSignIn from './pages/DevsSignIn';
 import GameProfile from './components/GameProfile/GameProfile';
 import DevsSignUp from './pages/DevsSignUp';
 import DevProfile from './components/DevProfile/DevProfile';
+import GameProfile2 from './components/GameProfile/GameProfile2';
 
 function App() {
   //sidebar function
@@ -33,6 +34,7 @@ function App() {
         <Route path='/devsSignUp' component={DevsSignUp} />
         <Route path='/games' component={Games} />
         <Route path='/gameProfile' component={GameProfile} />
+        <Route path='/gameProfile2' component={GameProfile2} />
         <Route path='/DevProfile' component={DevProfile} />
       </Switch>
     </Router>   

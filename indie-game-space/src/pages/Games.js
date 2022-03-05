@@ -22,7 +22,7 @@ const Games = () => {
   return (
     <>  
         <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjOne}/></Link>
-        <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjTwo}/></Link>
+        <Link to="GameProfile2" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjTwo}/></Link>
         <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjThree}/></Link>
         <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjFour}/></Link>
         <Link to="GameProfile" style={{ textDecoration: 'none' }}><GamesContent {...gamesObjFive}/></Link>
