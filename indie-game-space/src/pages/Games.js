@@ -7,16 +7,16 @@ import { gamesObjFour, gamesObjOne, gamesObjThree, gamesObjTwo, gamesObjFive } f
 
 const Games = () => {
 
-  const [gameList, setGameList] = useState()
+  // const [gameList, setGameList] = useState()
 
-  const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/gameList.php";
+  // const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/gameList.php";
 
-  axios.get(url)
-    .then((response) => {
-      // setGameList(res);
-      console.log(response.data);
-    })
-    .catch(err => console.log(err))
+  // axios.get(url)
+  //   .then((response) => {
+  //     // setGameList(res);
+  //     console.log(response.data);
+  //   })
+  //   .catch(err => console.log(err))
 
 
   return (
