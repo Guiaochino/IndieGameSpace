@@ -29,7 +29,7 @@ function FeaturedGames() {
                             </FeaturedCardInfo>
                         </FeaturedCard>
 
-                        <FeaturedCard to='/gameProfile'>
+                        <FeaturedCard to='/gameProfile2'>
                             <FeaturedCardInfo>
                                 <FeaturedCardIcon>
                                 <ImgIcon src='https://cdn.cloudflare.steamstatic.com/steam/apps/268910/capsule_616x353.jpg?t=1589281999' />
