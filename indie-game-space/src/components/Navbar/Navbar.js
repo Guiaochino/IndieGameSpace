@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import { Nav, NavLogo, NavIcon, LogOut, NavButton,
+import { Nav, NavLogo, NavIcon,
         MobileIcon, NavMenu, NavItem, NavLinks, Login, DropMenu, DropItem
          } from './Navbar.elements.js';
 import { FaBars } from 'react-icons/fa';
 
 const LogoutRender =() =>{
+
+    const [show, setShow] = useState(false);
+
     return(
-        <DropMenu title={ (<Login/>) } variant="success" >
+        <DropMenu title={ (<Login/>) } variant="success" show={show}
+        onMouseEnter={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}} 
+        menuVariant="dark" >
             <DropItem> Profile </DropItem>
             <DropItem> LogOut </DropItem>
         </DropMenu>
@@ -14,8 +19,13 @@ const LogoutRender =() =>{
 };
 
 const LoginRender = () => {
+
+    const [show, setShow] = useState(false);
+
     return(
-        <DropMenu title={ (<Login/>) } variant="success" >
+        <DropMenu title={ (<Login/>) } variant="success" show={show}
+        onMouseEnter={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}} 
+        menuVariant="dark" >
             <DropItem href={'/devsSignIn'}> Login </DropItem>
             <DropItem href={'/devsSignUp'}> Sign Up </DropItem>
         </DropMenu>
