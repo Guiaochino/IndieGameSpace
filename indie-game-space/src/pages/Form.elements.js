@@ -46,16 +46,16 @@ export const FormButton = styled(Link)`
     padding: 16px 0;
     boder: none;
     border-radius: 25px;
-    color: #333333;
+    color: #333;
     font-size: 20px;
     cursor: pointer;
     text-decoration : none;
     text-align: center;
 
     &:hover {
-        color: #fff;
-        background: #548a69;
-        transition: all 0.2s ease-in-out;
+        color : #fff;
+        background : #548a69;
+        transition : all 0.2s ease-in-out;
     }
 `;
 

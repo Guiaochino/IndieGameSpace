@@ -18,7 +18,7 @@
             array_push($listing, $game);
         }
 
-        echo json_encode($listing);
+        echo json_encode($listing, JSON_PRETTY_PRINT);
 
     } else {
         echo "No Games Available";

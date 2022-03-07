@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer';
 import FeaturedGames from './FeaturedGames';
 import HeroSection from './HeroSection';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>  
         <HeroSection />
