@@ -41,7 +41,7 @@ export const FormInput = styled.input`
     border-radius: 10px;
 `;
 
-export const FormButton = styled(Link)`
+export const FormButton = styled.button`
     background: #85cca0;
     padding: 16px 0;
     boder: none;

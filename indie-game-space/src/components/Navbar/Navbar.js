@@ -8,12 +8,16 @@ const LogoutRender =() =>{
 
     const [show, setShow] = useState(false);
 
+    function destroySession() {
+        sessionStorage.clear();
+    };
+
     return(
         <DropMenu title={ (<Login/>) } variant="success" show={show}
         onMouseEnter={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}} 
         menuVariant="dark" >
             <DropItem> Profile </DropItem>
-            <DropItem> LogOut </DropItem>
+            <DropItem href='/' onClick={ destroySession } > LogOut </DropItem>
         </DropMenu>
     )
 };
@@ -26,15 +30,13 @@ const LoginRender = () => {
         <DropMenu title={ (<Login/>) } variant="success" show={show}
         onMouseEnter={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}} 
         menuVariant="dark" >
-            <DropItem href={'/devsSignIn'}> Login </DropItem>
-            <DropItem href={'/devsSignUp'}> Sign Up </DropItem>
+            <DropItem href='/login' > Login </DropItem>
+            <DropItem href='/signup'> Sign Up </DropItem>
         </DropMenu>
     )
 };
 
 const Navbar = (props) => {
-
-    const [view, setView] = useState(props.logStatus ? true : false);
 
     return (
         <>
@@ -60,7 +62,7 @@ const Navbar = (props) => {
     
                 </NavMenu>
 
-                {view ? (<LogoutRender />) : (<LoginRender/>) }
+                {props.logStatus ? (<LogoutRender />) : (<LoginRender />) }
                 
             </Nav>
     </>
