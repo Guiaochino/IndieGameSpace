@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react'
 import { FormInput, Form, FormH1, FormButton,
-        FormLabel, SignInLink, 
-         DropdownContent } from './Form.elements';
+        FormLabel, SignInLink, DropdownContent, 
+        ValidationText} from './Form.elements';
 import { Container } from '../globalStyles';
 import axios from 'axios';
 
@@ -13,6 +13,10 @@ export default class DevsSignUp extends Component{
     username: "",
     email: "",
     password: "",
+    pass_valid_msg : "",
+    valid : false,
+    pass_msg: "",
+    pass_match : false,
     type: ""
   };
 
@@ -38,6 +42,24 @@ export default class DevsSignUp extends Component{
     await this.setState({
       password : e.target.value
     })
+    if (e.target.value.length < 8) {
+      await this.setState({ pass_valid_msg : "Password mus contain at least 8 character" });
+      await this.setState({ valid : false });
+    } else {
+      await this.setState({ pass_valid_msg : "Valid Password!" });
+      await this.setState({ valid: true });
+    }
+  }
+
+  handleConfirmation = async (e) => {
+    if (e.target.value === this.state.password) {
+      // Put something
+      await this.setState({ pass_msg : "Password Match" });
+      await this.setState({ pass_match : true });
+    } else {
+      await this.setState({ pass_msg : "Password not a Match!" });
+      await this.setState({ pass_match : false });
+    }
   }
 
 
@@ -57,6 +79,7 @@ export default class DevsSignUp extends Component{
       alert(response.data);
     })
     .catch(err=>console.log(err));
+
   }
 
   render(){
@@ -64,7 +87,7 @@ export default class DevsSignUp extends Component{
       <>
         <Container>
           <Form action='#'>
-            <FormH1> Sign Up to Create an Account </FormH1>
+            <FormH1> Create your Developer Account </FormH1>
             <FormLabel htmlFor='for'> Username </FormLabel>
             <FormInput type='text' required onChange={ this.handleUsername }/>
 
@@ -73,6 +96,11 @@ export default class DevsSignUp extends Component{
 
             <FormLabel htmlFor='for'> Password </FormLabel>
             <FormInput type='password' required onChange={ this.handlePassword }/>
+            <ValidationText valid={this.state.valid} > { this.state.pass_valid_msg } </ValidationText>
+
+            <FormLabel htmlFor='for'> Confirm Password </FormLabel>
+            <FormInput type='password' required onChange={ this.handleConfirmation } />
+            <ValidationText valid={this.state.pass_match} > { this.state.pass_msg } </ValidationText>
 
             <FormLabel> Group or Individual Developer </FormLabel>
             <DropdownContent onChange={this.handletype}>
@@ -81,7 +109,7 @@ export default class DevsSignUp extends Component{
               <option> Group </option>
             </DropdownContent>
 
-            <FormButton type='submit' onClick={this.handleSubmit}> SIGN UP </FormButton>
+            <FormButton to='/devsSignIn' type='submit' onClick={this.handleSubmit}> SIGN UP </FormButton>
             <SignInLink to='/devsSignIn'> Already have an account? </SignInLink>
           </Form>
         </Container>

@@ -23,22 +23,22 @@ export const Form = styled.form`
 export const FormH1 = styled.h1`
     margin-bottom: 40px;
     color: #fff;
-    font-size: 20px;
+    font-size: 1.5em;
     font-weight: 400;
     text-align: center;
 `;
 
 export const FormLabel = styled.label`
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 1em;
     color: #fff;
 `;
 
 export const FormInput = styled.input`
-    padding: 16px 16px;
-    margin-bottom: 32px;
+    padding: 2vh 1vw;
+    margin-bottom: 4vh;
     boder: none;
-    border-radius: 4px;
+    border-radius: 10px;
 `;
 
 export const FormButton = styled(Link)`
@@ -57,6 +57,13 @@ export const FormButton = styled(Link)`
         background : #548a69;
         transition : all 0.2s ease-in-out;
     }
+`;
+
+export const ValidationText = styled.p`
+    color : ${props => props.valid ? 'green' : 'red'};
+    margin-top : -3vh;
+    margin-bottom : 2vh;
+    font-size : 0.8em;
 `;
 
 export const ForgotLink = styled(Link)`
