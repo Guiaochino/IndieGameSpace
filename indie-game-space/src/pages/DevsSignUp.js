@@ -20,11 +20,6 @@ export default class DevsSignUp extends Component{
     type: ""
   };
 
-  handleUsername = async (e) => {
-    await this.setState({
-      username : e.target.value
-    })
-  }
 
   handletype = async (e) => {
     await this.setState({

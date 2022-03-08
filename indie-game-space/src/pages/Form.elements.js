@@ -60,7 +60,7 @@ export const FormButton = styled.button`
 `;
 
 export const ValidationText = styled.p`
-    color : ${props => props.valid ? 'green' : 'red'};
+    color : ${props => props.valid ? 'green' : '#ff3131'};
     margin-top : -3vh;
     margin-bottom : 2vh;
     font-size : 0.8em;

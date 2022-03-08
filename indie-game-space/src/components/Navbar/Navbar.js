@@ -16,7 +16,7 @@ const LogoutRender =() =>{
         <DropMenu title={ (<Login/>) } variant="success" show={show}
         onMouseEnter={()=>{setShow(true)}} onMouseLeave={()=>{setShow(false)}} 
         menuVariant="dark" >
-            <DropItem> Profile </DropItem>
+            <DropItem href='/Profile'> Profile </DropItem>
             <DropItem href='/' onClick={ destroySession } > LogOut </DropItem>
         </DropMenu>
     )

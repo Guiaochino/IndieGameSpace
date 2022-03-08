@@ -2,6 +2,9 @@
 
 <?php
 
+    // Login to Account
+    // TODO: Create Verification on email
+
     require './database.php';
 
     $username = $_POST["username"];
