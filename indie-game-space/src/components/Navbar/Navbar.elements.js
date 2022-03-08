@@ -116,9 +116,25 @@ export const NavItem = styled.li`
 `;
 
 // For Dropdown of Signup naf Login
-export const DropMenu = styled(DropdownButton)``;
+export const DropMenu = styled(DropdownButton)`
+    
+`;
 
-export const DropItem = styled(Dropdown.Item)``;
+export const DropItem = styled(Dropdown.Item)`
+    // text-decoration : none;
+    // cursor : pointer;
+    // background-color : transparent ;
+    // color : white;
+    // display : block;
+    // padding : 1vh 2vw;
+    // font-size : 1em;
+
+    // &:hover {
+    //     color : white;
+    //     background-color : #454545;
+    //     font-size : 1.2em;
+    // }
+`;
 
 export const NavLinks = styled(Link)`
     color: #fff;

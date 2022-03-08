@@ -3,6 +3,8 @@
 
 <?php
 
+    // Update Account for Changes
+
     require "./database.php";
 
     // $user = 'guiaochino';
