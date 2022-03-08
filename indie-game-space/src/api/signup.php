@@ -3,7 +3,10 @@
     require './database.php';
 
     // Request for input data
-    // TODO: Resolve Problem here
+    // TODO: Create Verification via email (Code Sent to Email)
+    // TODO: Change Code every 5 mins.
+    // TODO: Add date and time for account creation
+
     $devname = $_REQUEST["username"];
     $dev_email = $_REQUEST["email"];
     $dev_pass = $_REQUEST["password"];

@@ -6,42 +6,39 @@ import { FormInput, Form, FormH1, FormButton,
 import { Container } from '../globalStyles';
 import axios from 'axios';
 
-function DevsSignIn () {
-  
-  const [user, setUser] = useState();
+function DevsSignIn (props) {
+
   const [pass, setPass] = useState();
-  const [success, setSuccess] = useState(false);
 
   // Handles Change in Email
   const handleUsername = async e => {
-    await setUser(e.target.value)
+    await props.setUser(e.target.value);
+    sessionStorage.setItem("user", e.target.value);
   }
 
   // Handles Change in Password
   const handlePass = async e => {
-    await setPass(e.target.value)
+    await setPass(e.target.value);
   }
 
   // Handles Submission of data
   const handleSubmit = e => {
-    e.stopPropagation();
+    e.preventDefault();
 
     let data = new FormData();
-    data.append("username", user);
+    data.append("username", props.user);
     data.append("password", pass);
 
     const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/login.php";
     
     axios.post(url, data)
     .then(response => {
-      console.log(response.data);
       if (response.data === 1) {
-        console.log(response.data);
+        sessionStorage.setItem("logStatus", true);
         alert("Login Successful!");
-        setSuccess(true)
+        window.location.replace('/');
       } else {
         alert("Username and Password Do not Match!");
-        setSuccess(false)
       }
     })
     .catch(err => console.log(err));
@@ -58,12 +55,7 @@ function DevsSignIn () {
           <FormLabel htmlFor='for'> Password </FormLabel>
           <FormInput type='password' required onChange={handlePass}/>  
 
-          <FormButton to={{
-            pathname : success ? "/DevProfile" : "/devsSignIn",
-            state : {
-              user : user
-            }
-          }} onClick={handleSubmit}> SIGN IN </FormButton>
+          <FormButton onClick={handleSubmit}> SIGN IN </FormButton>
 
           <ForgotLink> Forgot Password? </ForgotLink>
           <SignUpLink to='DevsSignUp'> Create an Account </SignUpLink>

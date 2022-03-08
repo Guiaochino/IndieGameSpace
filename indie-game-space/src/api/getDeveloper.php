@@ -2,6 +2,8 @@
 
 <?php
 
+    // Get Developer Details for Developer Profile
+
     require './database.php';
 
     $userlogged = $_REQUEST["username"];
