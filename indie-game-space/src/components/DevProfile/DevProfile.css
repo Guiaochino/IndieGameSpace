@@ -1,5 +1,100 @@
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+
+/* Global Profile Design */
+.profile-container {
+  border-radius: 10px;
+  border-top: 3px solid #85cca0;
+  border-bottom: 3px solid #85cca0;
+  width: 80%;
+  display: flex;
+  margin: 5vh auto;
+}
+
+.block {
+  width: 100%;
+}
+
+/* Details Container */
+.details-container {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-left: 10px double #85cca0 ;
+  width: 20%;
+  padding: 2vh 0.5vw;
+}
+
+.details-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+h6 {
+  color : #999;
+}
+
+.member-header {
+  margin-top: 3vh;
+}
+
+.member-container {
+  margin-left: 1vw;
+}
+
+.details-container h4 {
+  margin-top: 5vh;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5em;
+  margin-top: 10vh;
+  margin-bottom: 2vh;
+}
+
+/* Game List Design */
+.game-container {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-right: 10px double #85cca0 ;
+  border-left: 3px solid #85cca0 ;
+  width: 80%;
+  
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #85cca0;
+  padding: 1vh 2vw;
+}
+
+.game-header div {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.list-container {
+  padding: 1vh 1vw;
+}
+
+/* Game View Design */
+.view {
+  background-color: #85cca0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1vh 1vw;
+  margin-bottom: 1vh;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.gap-left {
+  margin-left: 1vw;
+}

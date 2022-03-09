@@ -1,14 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './DevProfile.css';
-import { GiConsoleController } from 'react-icons/gi';
-import { MdPublish } from 'react-icons/md';
-import { CgProfile } from 'react-icons/cg';
 import { BsPencilSquare, BsTrashFill } from 'react-icons/bs';
 import defaultImage from '../../images/defaultUser.png'
 import axios from 'axios';
-import { useLocation, useParams } from 'react-router-dom';
-import { PublishForm } from '../Index';
+import { Button } from 'react-bootstrap';
+import { BsFacebook, BsTwitter, BsInstagram } from 'react-icons/bs'
 
 // Template for the Viewing of Published Games by Developer
 function GameView(props) {
@@ -16,10 +13,10 @@ function GameView(props) {
     <>
       <div className='view'>
 
-        <h4 className='title'> { props.gameTitle } </h4>
+        <div className='title'> { props.gameTitle } </div>
         <div className='rating-container'> { props.rate } </div>
-        <div >
-          <button className='btn btn-dark gep'> <BsPencilSquare /> Edit </button>
+        <div className='button-container'>
+          <button className='btn btn-dark'> <BsPencilSquare /> Edit </button>
           <button className='btn btn-danger gap-left'> <BsTrashFill /> Delete </button>
         </div>
 
@@ -27,6 +24,14 @@ function GameView(props) {
     </>
   );
 };
+
+function noView () {
+  return(
+    <>
+      <div className='no-games'> No Published Games to View, Click Add Game to Post a Game </div>
+    </>
+  )
+}
 
 GameView.defaultProps = {
   gameTitle : 'Sample Title',
@@ -44,20 +49,121 @@ function GameListView() {
 
   return (
     <>
-      <GameView gameTitle="Game Name" rate="" />
+      <GameView gameTitle="Game Name" />
+      <GameView gameTitle="Game Name" />
     </>
   );
 };
+
+function MemberTemp (props) {
+  return(
+    <>
+      <h6> {props.name} </h6>
+    </>
+  )
+}
+
+MemberTemp.defaultProps = {
+  name : "Member Name"
+};
+
+function NoMember () {
+  return(
+    <>
+      <div className='member-header' > <center> Setup your Account <br/> Click "Edit Profile" </center></div>
+    </>
+  )
+}
+
+function HasMember (props) {
+  return(
+    <>
+      <h5 className='member-header'> Members </h5>
+          <div className='member-container'>
+            {/* For testing Purposes */}
+            <MemberTemp />
+
+            {/* Original Functionality Loop through members */}
+            {props.members.map((member, index) => (
+              <MemberTemp name={member.firstname.concat(" ", member.middlename.concat(" ", member.lastname))} />
+            ))}
+          </div>
+    </>
+  )
+}
 
 
 
 export default function DevProfile(props) {
 
-  // const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php";
+  const [dev, setdev] = useState();
+  const [dataStatus, setDataStatus] = useState(false);
+
+  const [members, setMembers] = useState();
+  const [hasMembers, setHasMembers] = useState(false);
+  
+  let data = new FormData();
+  data.append("username", sessionStorage.getItem("user"));
+
+  function handleLoad() {
+
+    const urlAccount = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php";
+
+    const urlMembers = "http://localhost/IndieGameSpace/indie-game-space/src/api/getMembers.php";
+      
+    axios.post(urlAccount, data)
+    .then(response => {
+      console.log(response.data);
+      if (response.data === 0){
+        setDataStatus(false);
+      } else {
+        setdev(response.data);
+        setDataStatus(true);
+      }
+    })
+    .catch(err => console.log(err));
+
+    axios.post(urlMembers, data)
+    .then(response => {
+      if (response.data === "\r\n") {
+        setHasMembers(false);
+      } else {
+        setMembers(response.data);
+        setHasMembers(true);
+      }
+      
+    })
+    .catch(err => console.log(err))
+  }
 
   return (
     <>
-      
+      <div className='profile-container' onLoad={handleLoad}>
+        <div className='details-container'>
+          <img src={ dataStatus && isNaN(dev[0].profile_picture) ? dev[0].profile_picture : props.user_image } alt='Profile' />
+          <h4> { dataStatus ? dev[0].devUser : props.devname } </h4>
+          <h6> { dataStatus ? dev[0].dev_email : props.devemail } </h6>
+
+          { hasMembers ? (<HasMember members={members} />) : (<NoMember/>) }
+
+          <div className='link-container'> 
+            <BsFacebook />
+            <BsTwitter />
+            <BsInstagram />
+          </div>
+
+          <Button variant='outline-dark' className='block' href='/editProfile' > Edit Profile </Button>
+        </div>
+
+        <div className='game-container'>
+          <div className='game-header' > 
+            <div> Games Posted </div>
+            <Button variant='outline-success' href='/publishGame'> Add Game </Button>
+          </div>
+
+          <div className='list-container' > <GameListView /> </div>
+        </div>
+      </div>
     </>
   )
 }
