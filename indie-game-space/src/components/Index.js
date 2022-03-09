@@ -7,6 +7,7 @@
 
 export {default as MainCommment} from './Comments/MainCommment';
 export {default as DevProfile} from './DevProfile/DevProfile';
+export {default as EditProfile} from './DevProfile/EditProfile'
 export {default as Footer} from './Footer/Footer';
 export {default as GameProfile} from './GameProfile/GameProfile';
 export {default as GameProfile2} from './GameProfile/GameProfile2';

@@ -20,6 +20,12 @@ export default class DevsSignUp extends Component{
     type: ""
   };
 
+  handleUsername = async (e) => {
+    await this.setState({
+      username : e.target.value
+    })
+  }
+
 
   handletype = async (e) => {
     await this.setState({
@@ -104,8 +110,8 @@ export default class DevsSignUp extends Component{
               <option> Group </option>
             </DropdownContent>
 
-            <FormButton to='/devsSignIn' type='submit' onClick={this.handleSubmit}> SIGN UP </FormButton>
-            <SignInLink to='/devsSignIn'> Already have an account? </SignInLink>
+            <FormButton to='/login' type='submit' onClick={this.handleSubmit}> SIGN UP </FormButton>
+            <SignInLink to='/login'> Already have an account? </SignInLink>
           </Form>
         </Container>
       </>

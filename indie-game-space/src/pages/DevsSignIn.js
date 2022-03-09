@@ -58,7 +58,7 @@ function DevsSignIn (props) {
           <FormButton onClick={handleSubmit}> SIGN IN </FormButton>
 
           <ForgotLink> Forgot Password? </ForgotLink>
-          <SignUpLink to='DevsSignUp'> Create an Account </SignUpLink>
+          <SignUpLink to='singup'> Create an Account </SignUpLink>
         </Form>
           
       </Container>

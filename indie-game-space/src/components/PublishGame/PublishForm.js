@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import './PublishForm.css'
 
 
 export default function PublishForm() {
@@ -84,47 +85,50 @@ export default function PublishForm() {
 
     return (
         <>
-        <Form>
-            
-            <Form.Group className='mb-3'>
-            <Form.Label> Game Name </Form.Label>
-            <Form.Control type='text' placeholder='Game Title' onChange={handleGameName}/>
-            </Form.Group>
+        <div className="form-container">
+            <Form>
+                
+                <Form.Group className='mb-3'>
+                <Form.Label> Game Name </Form.Label>
+                <Form.Control type='text' placeholder='Game Title' onChange={handleGameName}/>
+                </Form.Group>
 
-            
-            <Form.Group className='mb-3'>
-            <Form.Label> Game Description </Form.Label>
-            <Form.Control as='textarea' placeholder='Short Description of Game, that can either be Informational or Eye Catching' style={ { height : '20vh' } } onChange={handleDescription}/>
-            </Form.Group>
+                
+                <Form.Group className='mb-3'>
+                <Form.Label> Game Description </Form.Label>
+                <Form.Control as='textarea' placeholder='Short Description of Game, that can either be Informational or Eye Catching' style={ { height : '20vh' } } onChange={handleDescription}/>
+                </Form.Group>
 
-            <Form.Group className='mb-3'>
-            <Form.Label> Genre </Form.Label>
-            <Form.Control type='text' placeholder='Game Title' onChange={handleGenre}/>
-            </Form.Group>
+                <Form.Group className='mb-3'>
+                <Form.Label> Genre </Form.Label>
+                <Form.Control type='text' placeholder='Game Title' onChange={handleGenre}/>
+                </Form.Group>
 
-            
-            <Form.Group className='mb-3'>
-            <Form.Label> Game Image </Form.Label>
-            <Form.Control type='file' onChange={ uploadImage } />
-            </Form.Group>
+                
+                <Form.Group className='mb-3'>
+                <Form.Label> Game Image </Form.Label>
+                <Form.Control type='file' onChange={ uploadImage } />
+                </Form.Group>
 
-            
-            <Form.Group className='mb-3'>
-            <Form.Label> Sample Images </Form.Label>
-            <Form.Control type='file' multiple onChange={ handleMultiple } />
-            <Form.Text> You can select a maximum of 6 images </Form.Text>
-            </Form.Group>
+                
+                <Form.Group className='mb-3'>
+                <Form.Label> Sample Images </Form.Label>
+                <Form.Control type='file' multiple onChange={ handleMultiple } />
+                <Form.Text> You can select a maximum of 6 images </Form.Text>
+                </Form.Group>
 
-            
-            <Form.Group className='mb-3'>
-            <Form.Label> Trailer Link </Form.Label>
-            <Form.Control type='text' placeholder='Link here...'onChange={handleLink} />
-            <Form.Text> Strictly Youtube Video Link Only </Form.Text>
-            </Form.Group>
+                
+                <Form.Group className='mb-3'>
+                <Form.Label> Trailer Link </Form.Label>
+                <Form.Control type='text' placeholder='Link here...'onChange={handleLink} />
+                <Form.Text> Strictly Youtube Video Link Only </Form.Text>
+                </Form.Group>
 
-            <Button variant='success' type="submit" onClick={ handleSubmit }> Publish </Button>
+                <Button variant='success' type="submit" onClick={ handleSubmit }> Publish </Button>
 
-        </Form>
+            </Form>
+        </div>
+        
         </>
     )
 }
