@@ -55,7 +55,11 @@ function App() {
         )} />
 
         <Route path='/publishGame' component={PublishForm} />
-        <Route path='/editProfile' component={EditProfile} />
+        <Route 
+        path='/editProfile' 
+        render={(props => (
+          <EditProfile {...props} user={user} />
+        ))} />
 
       </Switch>
     </Router>   

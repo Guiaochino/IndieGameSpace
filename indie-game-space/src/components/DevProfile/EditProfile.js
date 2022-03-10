@@ -1,15 +1,15 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import defaultUser from '../../images/defaultUser.png';
 import './EditProfile.css';
 
-function EditProfile() {
+function EditProfile(props) {
 
     const [memberList, setMemberList] = useState([{ name : "" }]);
     const [devName, setDevName] = useState();
     const [devEmail, setDevEmail] = useState();
     const [devType, setDevType] = useState();
-
     const [profile, setProfile] = useState();
 
     // For Members List
@@ -24,7 +24,7 @@ function EditProfile() {
     }
 
     const handleMemberTextChange = (e, index) => {
-        const { name, value } = e.target;
+        const { value } = e.target;
         const list = [...memberList];
         list[index].name = value;
         setMemberList(list);
@@ -65,6 +65,34 @@ function EditProfile() {
     // For Developer Type
     const handleDevType = async(e) => {
         await setDevType(e.target.value);
+    }
+
+    // On Execute Profile Changes
+    const handleSubmit = () => {
+
+        if (window.confirm("Are you sure about the Changes?") === true){
+
+            let data = new FormData();
+            
+            data.append("user", props.user);
+            data.append("devname", devName);
+            data.append("profile", profile);
+            data.append("email", devEmail);
+            data.append("type", devType);
+            data.append("members", memberList);
+
+            const url = 'http://localhost/IndieGameSpace/indie-game-space/src/api/updateAccount';
+
+            axios.post(url, data)
+            .then(response => {
+                alert(response.data)
+            })
+            .catch(err => console.log(err));
+
+        } else {
+            window.location.replace('/devProfile');
+        }
+
     }
 
     return (
@@ -132,7 +160,7 @@ function EditProfile() {
                     </div>
                     {/* Submit Button */}
 
-                    <Button variant='success' type='submit'> Submit Changes </Button>
+                    <Button variant='success' type='submit' onClick={handleSubmit}> Submit Changes </Button>
                     <Button variant='success' type='submit' className='spc'> Change Password </Button>
 
 
