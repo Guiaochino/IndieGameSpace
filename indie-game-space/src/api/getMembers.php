@@ -7,7 +7,7 @@
 
     $userlogged = $_REQUEST["username"];
 
-    $getMembers = "SELECT firstname, middlename, lastname FROM dev_profile WHERE dev_id = 20";
+    $getMembers = "SELECT member_name FROM dev_profile WHERE dev_id = 20";
     $result = mysqli_query($connection, $getMembers);
 
     $arr_obj = array();
@@ -16,8 +16,6 @@
 
         while ($row = mysqli_fetch_object($result)){
             $arr_obj[] = $row;
-
-            echo $row["firstname"];
         }
 
         echo json_encode($arr_obj, JSON_PRETTY_PRINT);

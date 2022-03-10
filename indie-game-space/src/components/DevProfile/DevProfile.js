@@ -84,9 +84,7 @@ function HasMember (props) {
             <MemberTemp />
 
             {/* Original Functionality Loop through members */}
-            {props.members.map((member, index) => (
-              <MemberTemp name={member.firstname.concat(" ", member.middlename.concat(" ", member.lastname))} />
-            ))}
+            
           </div>
     </>
   )
@@ -114,7 +112,7 @@ export default function DevProfile(props) {
     axios.post(urlAccount, data)
     .then(response => {
       console.log(response.data);
-      if (response.data === 0){
+      if (response.data < 3){
         setDataStatus(false);
       } else {
         setdev(response.data);
@@ -125,7 +123,8 @@ export default function DevProfile(props) {
 
     axios.post(urlMembers, data)
     .then(response => {
-      if (response.data === "\r\n") {
+      console.log(response.data)
+      if (response.data < 3) {
         setHasMembers(false);
       } else {
         setMembers(response.data);

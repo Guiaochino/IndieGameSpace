@@ -1,0 +1,46 @@
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gap {
+    margin-bottom: 3vh;
+}
+
+.left-field {
+    width: 30%;
+}
+
+.right-field {
+    width: 70%;
+    margin-left: 2vw;
+}
+
+.col-contianer {
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+input, select {
+    border-radius: 8px;
+    width: 100%;
+    padding: 1vh 1vw;
+    border: none;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.members {
+    display: flex;
+}
+
+.spc {
+    margin-left: 1vw;
+}
+
