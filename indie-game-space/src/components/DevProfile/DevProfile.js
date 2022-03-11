@@ -28,7 +28,7 @@ function GameView(props) {
 function NoView () {
   return(
     <>
-      <div className='no-games'> No Published Games to View, Click Add Game to Post a Game </div>
+      <div className='no-games'> No Published Games to View, Click "Add Game" to Post a Game </div>
     </>
   )
 }
@@ -41,15 +41,13 @@ GameView.defaultProps = {
 // List View of Published Games
 function GameListView(props) {
 
-  // function onLoad () {
-
-  //   axios
-
-  // };
-
   return (
     <>
-      <GameView gameTitle={props.games.title} />
+      <div>
+        {props.games.map((game, index) => (
+          <GameView key={index} gameTitle={game.game_name} rate={game.rating} />
+        ))}
+      </div>
     </>
   );
 };
@@ -75,15 +73,15 @@ function NoMember () {
 }
 
 function HasMember (props) {
+
   return(
     <>
       <h5 className='member-header'> Members </h5>
           <div className='member-container'>
-            {/* For testing Purposes */}
-            <MemberTemp />
-
             {/* Original Functionality Loop through members */}
-            
+            {props.members.map((member, index) => (
+              <MemberTemp key={index} name={member.member_name} />
+            ))}
           </div>
     </>
   )
@@ -97,7 +95,7 @@ export default function DevProfile(props) {
   const [dataStatus, setDataStatus] = useState(false);
 
   const [games, setGames] = useState();
-  const [hasGames, setHasGames] = useState();
+  const [hasGames, setHasGames] = useState(false);
 
   const [members, setMembers] = useState();
   const [hasMembers, setHasMembers] = useState(false);
@@ -110,12 +108,13 @@ export default function DevProfile(props) {
     const urlAccount = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php";
 
     const urlMembers = "http://localhost/IndieGameSpace/indie-game-space/src/api/getMembers.php";
+
+    const urlDevGames = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloperGames.php";
     
     // For Account
     axios.post(urlAccount, data)
     .then(response => {
-      console.log(response.data);
-      if (response.data < 3){
+      if (response.data < 1){
         setDataStatus(false);
       } else {
         setdev(response.data);
@@ -127,15 +126,28 @@ export default function DevProfile(props) {
     // For Members
     axios.post(urlMembers, data)
     .then(response => {
-      if (response.data < 3) {
+      if (response.data < 1) {
         setHasMembers(false);
       } else {
         setMembers(response.data);
+        console.log(response.data);
         setHasMembers(true);
       }
       
     })
     .catch(err => console.log(err))
+
+    // For Games
+  axios.post(urlDevGames, data)
+  .then(response => {
+    if (response.data < 1) {
+      setHasGames(false);
+    } else {
+      setGames(response.data);
+      setHasGames(true);
+    }
+  })
+  .catch(err => console.log(err))
   }
 
   return (

@@ -88,8 +88,7 @@ function EditProfile(props) {
             axios.post(url, data)
             .then(response => {
                 sessionStorage.setItem("user", devName);
-                alert(response.data);
-                console.log(response.data);
+                window.location.replace('/Profile');
             })
             .catch(err => console.log(err));
 

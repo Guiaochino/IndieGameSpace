@@ -1,4 +1,3 @@
-
 <?php
 
     // Update Account for Changes
@@ -38,10 +37,10 @@
 
                 }
 
-        } else if (mysqli_num_rows($memberResult) > 0 && mysqli_num_rows($memberResult) != count($member_arr)) {
+        } else if (mysqli_num_rows($memberResult) != count($member_arr)) {
             // DELETE and INSERT
-            $deleteMember = "DELETE FROM dev_profile WHERE dev_id = (SELECT devID FROM dev_account WHERE devUser='$user')";
-            $result = mysqli_query($connection, $deleteMember);
+            $deleteMember = "DELETE FROM dev_profile WHERE dev_id = (SELECT devID FROM dev_account WHERE dev_account.devUser='$user')";
+            mysqli_query($connection, $deleteMember);
 
             if ($result) {
 

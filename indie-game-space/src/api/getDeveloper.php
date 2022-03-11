@@ -1,13 +1,10 @@
-
-
 <?php
 
     // Get Developer Details for Developer Profile
 
     require './database.php';
 
-    // $userlogged = $_REQUEST["username"];
-    $userlogged = "blackboxgames";
+    $userlogged = $_REQUEST["username"];
 
     $getDeveloperAccount = "SELECT devUser, dev_email, media_link_fb, media_link_twt, media_link_ig, profile_picture FROM dev_account WHERE devUser = '$userlogged'";
     

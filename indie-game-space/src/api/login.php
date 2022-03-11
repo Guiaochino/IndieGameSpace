@@ -1,5 +1,3 @@
-
-
 <?php
 
     // Login to Account

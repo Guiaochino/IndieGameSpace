@@ -1,5 +1,3 @@
-
-
 <?php
 
     // Get Games to Display on Game List

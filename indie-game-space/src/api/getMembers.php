@@ -1,4 +1,3 @@
-
 <?php
 
     // Get members of developer account
@@ -7,7 +6,7 @@
 
     $userlogged = $_REQUEST["username"];
 
-    $getMembers = "SELECT member_name FROM dev_profile WHERE dev_id = 20";
+    $getMembers = "SELECT member_name FROM dev_profile WHERE dev_id=(SELECT devID FROM dev_account WHERE dev_account.devUser = '$userlogged')";
     $result = mysqli_query($connection, $getMembers);
 
     $arr_obj = array();

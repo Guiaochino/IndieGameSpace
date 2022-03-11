@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './PublishForm.css'
-
+import axios from 'axios';
 
 export default function PublishForm() {
 
@@ -15,19 +15,19 @@ export default function PublishForm() {
 
 
     const handleGameName = async (e) => {
-        await setGameName( { gameName : e.target.value } )
+        await setGameName( e.target.value )
     }
 
     const handleDescription = async (e) => {
-        await setDesc( { description : e.target.value } )
+        await setDesc( e.target.value )
     }
 
     const handleGenre = async (e) => {
-        await setGenre( { genre : e.target.value } )
+        await setGenre( e.target.value )
     }
 
     const handleLink = async (e) => {
-        await setLink( { link : e.target.value } )
+        await setLink( e.target.value )
     }
 
     const convertBase64 = (file) => {
@@ -48,25 +48,27 @@ export default function PublishForm() {
     const uploadImage = async (e) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
-        setGameImg({ game_image: base64 });
+        setGameImg( base64 );
     };
 
     const handleMultiple = async (e) => {
 
         const arrfile = [];
 
-        Array.from(e.target.files).forEach(file => {
-        const conv = convertBase64(file);
-        arrfile.push(conv); 
+        Array.from(e.target.files).forEach(async file => {
+            const base64 = await convertBase64(file);
+            arrfile.push(base64);
+            
         });
 
         setSampImg(arrfile);
 
     };
 
-    function handleSubmit (e) {
+    function handleSubmit () {
         
         let data = new FormData();
+        data.append("user", sessionStorage.getItem("user"));
         data.append("game_name", gameName);
         data.append("description", desc);
         data.append("genre", genre);
@@ -74,13 +76,13 @@ export default function PublishForm() {
         data.append("samp_img", sampImg);
         data.append("link", link);
 
-        // const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/publishGame.php";
+        const url = "http://localhost/IndieGameSpace/indie-game-space/src/api/publishGame.php";
 
-        // axios.post(url, data)
-        // .then(response => {
-        //   console.log(response.data);
-        // })
-        // .catch(err => console.log(err))
+        axios.post(url, data)
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(err => console.log(err))
     }
 
     return (
@@ -101,7 +103,7 @@ export default function PublishForm() {
 
                 <Form.Group className='mb-3'>
                 <Form.Label> Genre </Form.Label>
-                <Form.Control type='text' placeholder='Game Title' onChange={handleGenre}/>
+                <Form.Control type='text' placeholder='Game Genre' onChange={handleGenre}/>
                 </Form.Group>
 
                 
@@ -124,7 +126,7 @@ export default function PublishForm() {
                 <Form.Text> Strictly Youtube Video Link Only </Form.Text>
                 </Form.Group>
 
-                <Button variant='success' type="submit" onClick={ handleSubmit }> Publish </Button>
+                <Button variant='success' onClick={ handleSubmit }> Publish </Button>
 
             </Form>
         </div>
