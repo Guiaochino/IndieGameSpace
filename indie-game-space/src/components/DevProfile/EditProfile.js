@@ -141,8 +141,8 @@ function EditProfile(props) {
                         <div className='col-container right-field block'>
                             <select onChange={handleDevType}>
                                 <option value=""> -- Select Developer Type -- </option>
-                                <option value="individual"> Individual </option>
-                                <option value="group"> Group </option>
+                                <option value="Individual"> Individual </option>
+                                <option value="Group"> Group </option>
                             </select>
                         </div>
                     </div>

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const DevsCont = styled.div`
     color: #ffffff;
     padding: 80px 0;
-    background: ${({ lightBg }) => (lightBg ? '#ffffff' : '#333333')};
+    // background: ${({ lightBg }) => (lightBg ? '#ffffff' : '#333333')};
+    background : ${(props) => (props.lightBg ? '#ffffff' : '#333333')};
 `;
 
 export const InfoRow = styled.div`
@@ -11,7 +12,8 @@ export const InfoRow = styled.div`
     margin: 0 0px -15px 0px;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+    // flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+    flex-direction : ${(props) => (props.imgStart ? 'row-reverse' : 'row')};
 `;
 
 export const InfoColumn = styled.div`
@@ -34,7 +36,8 @@ export const TextWrapper = styled.div`
     max-width: 540 px;
     padding-top: 0;
     padding-bottom: 60px;
-    text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    // text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    text-align : ${(props) => props.textAlign ? 'left' : 'right'};
 
     @media screen and (max-width: 768px) {
         padding-bottom: 65px;
@@ -42,8 +45,11 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.div`
-    color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#000000')}; 
-    text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    // color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#000000')}; 
+    // text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    color : ${(props) => (props.lightTopLine ? '#a9b3c1' : '#000000')};
+    text-align : ${(props) => (props.textAlign ? 'left' : 'right')};
+
     font-size: 18px;
     line-height 16px;
     letter-spacing: 1.4px;
@@ -52,7 +58,8 @@ export const TopLine = styled.div`
 `;
 
 export const Heading = styled.h1`
-    text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    // text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')};
+    text-align: ${(props) => (props.textAlign ? 'left' : 'right')}; 
     margin-bottom: 24px;
     font-size: 48px;
     line-height: 1.1;
@@ -63,14 +70,16 @@ export const Heading = styled.h1`
     font-weight: bold;
 
     &:hover {
-        color: ${({ lightText }) => (lightText ? '#fff' : '#333333')};
+        color: ${(props) => (props.lightText ? '#fff' : '#333333')};
         transition: all 0.3s ease;
     }
 `;
 
 export const Genre = styled.p`
-    color: ${({ lightTextGenre }) => (lightTextGenre ? '#a9b3c1' : '#1c2237')};
-    text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    // color: ${({ lightTextGenre }) => (lightTextGenre ? '#a9b3c1' : '#1c2237')};
+    // text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')}; 
+    color: ${(props) => (props.lightTextGenre ? '#a9b3c1' : '#1c2237')};
+    text-align: ${(props) => (props.textAlign ? 'left' : 'right')}; 
     max-width: 600px;
     margin-bottom: 35px;
     font-size: 18px;
@@ -79,8 +88,10 @@ export const Genre = styled.p`
 
 
 export const Subtitle = styled.p`
-    color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
-    text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')};
+    // color: ${({ lightTextDesc }) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
+    // text-align: ${({ textAlign }) => (textAlign ? 'left' : 'right')};
+    color: ${(props) => (props.lightTextDesc ? '#a9b3c1' : '#1c2237')};
+    text-align: ${(props) => (props.textAlign ? 'left' : 'right')};
     max-width: 600px;
     margin-bottom: 35px;
     font-size: 18px;
@@ -88,8 +99,10 @@ export const Subtitle = styled.p`
 `;
 
 export const ImgWrapper = styled.div`
-    justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
-    padding: ${({ padding }) => (padding ? '0 0 0 125px' : '0 125px 0 0')};
+    // justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+    // padding: ${({ padding }) => (padding ? '0 0 0 125px' : '0 125px 0 0')};
+    justify-content: ${(props) => (props.start ? 'flex-start' : 'flex-end')};
+    padding: ${(props) => (props.padding ? '0 0 0 125px' : '0 125px 0 0')};
     max-width: 1000px;
     padding-bottom: 50px;
     display: flex;

@@ -4,7 +4,7 @@
 
     require './database.php';
 
-    $getGameList = "SELECT game_profile.game_name, game_profile.game_desc, game_profile.game_image, dev_account.devUser FROM game_profile INNER JOIN dev_account ON game_profile.dev_id = dev_account.devID";
+    $getGameList = "SELECT game_profile.game_name, game_profile.game_desc, game_profile.game_genre, game_profile.game_image, dev_account.devUser FROM game_profile INNER JOIN dev_account ON game_profile.dev_id = dev_account.devID";
     // $getGameList = "SELECT * from game_profile";
     $gameList = mysqli_query($connection, $getGameList);
 
