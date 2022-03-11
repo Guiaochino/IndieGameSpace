@@ -12,18 +12,21 @@
     $type = $_REQUEST["type"];
     $members = $_REQUEST["members"];
 
+    $member_arr = explode(",", $members);
+
+    // Update Account Details
     $updateAccount = "UPDATE dev_account SET devUser='$devname', dev_email='$email', dev_type='$type', profile_picture='$profile' WHERE devUser='$user'";
-    $result = mysqli_query($connection, $updateAccount);
+    mysqli_query($connection, $updateAccount);
 
-    if ($result) {
-        // Check table if has members, if none insert, if has update
-        $memberQuery = "SELECT * FROM devProfile WHERE dev_id = (SELECT devID FROM dev_account WHERE devUser='$user')";
-        $memberResult = mysqli_query($connection, $memberQuery);
+    // Check table if has members, if none insert, if has update
+    $memberQuery = "SELECT * FROM devProfile WHERE dev_id = (SELECT devID FROM dev_account WHERE dev_account.devUser='$user')";
+    $memberResult = mysqli_query($connection, $memberQuery);
 
-        if (mysqli_num_rows($memberResult) == count($members)){
+    if ($memberResult){
+        if (mysqli_num_rows($memberResult) == count($member_arr)){
             // Update Members
-            
-            foreach($members as $member) {
+                
+            foreach($members_arr as $member) {
                 $updateMember = "UPDATE dev_profile SET member_name='$member' WHERE dev_id = (SELECT devID FROM dev_account WHERE devUser='$user')";
                 $result = mysqli_query($connection ,$updateMember);
 
@@ -33,18 +36,17 @@
                     echo "somehting went wrong -- update";
                 }
 
-            }
+                }
 
-        } else if (mysqli_num_rows($memberResult) > 0 && mysqli_num_rows($memberResult) != count($members)) {
+        } else if (mysqli_num_rows($memberResult) > 0 && mysqli_num_rows($memberResult) != count($member_arr)) {
             // DELETE and INSERT
             $deleteMember = "DELETE FROM dev_profile WHERE dev_id = (SELECT devID FROM dev_account WHERE devUser='$user')";
             $result = mysqli_query($connection, $deleteMember);
 
             if ($result) {
-                echo "delete successful";
 
-                foreach($members as $member) {
-                    $insertMember = sprintf("INSERT INTO dev_profile (dev_id, member_name) VALUES ((), %s)", $member["name"]);
+                foreach($member_arr as $member) {
+                    $insertMember = "INSERT INTO 'dev_profile' ('dev_id', 'member_name') VALUES ((SELECT devID FROM dev_account WHERE devUser='$user'), '$member')";
                     $updateResult = mysqli_query($connection, $insertMember);
 
                     if ($updateResult) {
@@ -56,23 +58,19 @@
             } else {
                 echo "something went wrong -- delete > update";
             }
-        
-        } else {
-            // INSERT
-            foreach($members as $member) {
-                $insertMember = sprintf("INSERT INTO dev_profile (dev_id, member_name) VALUES ((), %s)", $member["name"]);
-                $result = mysqli_query($connection, $insertMember);
+        }
+    } else {
+        // INSERT
+        foreach($member_arr as $member) {
+            $insertMember = "INSERT INTO dev_profile (dev_id, member_name) VALUES ((SELECT devID FROM dev_account WHERE devUser='$user'), '$member')" ;
+            $result = mysqli_query($connection, $insertMember);
 
-                if ($result) {
-                    echo "update success -- insert";
-                } else {
-                    echo "something went wrong -- insert";
-                }
+            if ($result) {
+                echo "update success -- insert";
+            } else {
+                echo "something went wrong -- insert";
             }
         }
-
-    } else {
-        echo "Something went wrong -- selection";
     }
     
 

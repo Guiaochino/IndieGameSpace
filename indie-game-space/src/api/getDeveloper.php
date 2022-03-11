@@ -6,7 +6,8 @@
 
     require './database.php';
 
-    $userlogged = $_REQUEST["username"];
+    // $userlogged = $_REQUEST["username"];
+    $userlogged = "blackboxgames";
 
     $getDeveloperAccount = "SELECT devUser, dev_email, media_link_fb, media_link_twt, media_link_ig, profile_picture FROM dev_account WHERE devUser = '$userlogged'";
     
@@ -16,7 +17,7 @@
 
     if (mysqli_num_rows($dev) > 0) {
 
-        while ($row = mysqli_fetch_object($dev)){
+        while ($row = mysqli_fetch_assoc($dev)){
             $res_arr[] = $row;
         }
 

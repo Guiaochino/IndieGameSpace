@@ -25,7 +25,7 @@ function GameView(props) {
   );
 };
 
-function noView () {
+function NoView () {
   return(
     <>
       <div className='no-games'> No Published Games to View, Click Add Game to Post a Game </div>
@@ -39,7 +39,7 @@ GameView.defaultProps = {
 };
 
 // List View of Published Games
-function GameListView() {
+function GameListView(props) {
 
   // function onLoad () {
 
@@ -49,8 +49,7 @@ function GameListView() {
 
   return (
     <>
-      <GameView gameTitle="Game Name" />
-      <GameView gameTitle="Game Name" />
+      <GameView gameTitle={props.games.title} />
     </>
   );
 };
@@ -97,6 +96,9 @@ export default function DevProfile(props) {
   const [dev, setdev] = useState();
   const [dataStatus, setDataStatus] = useState(false);
 
+  const [games, setGames] = useState();
+  const [hasGames, setHasGames] = useState();
+
   const [members, setMembers] = useState();
   const [hasMembers, setHasMembers] = useState(false);
   
@@ -108,7 +110,8 @@ export default function DevProfile(props) {
     const urlAccount = "http://localhost/IndieGameSpace/indie-game-space/src/api/getDeveloper.php";
 
     const urlMembers = "http://localhost/IndieGameSpace/indie-game-space/src/api/getMembers.php";
-      
+    
+    // For Account
     axios.post(urlAccount, data)
     .then(response => {
       console.log(response.data);
@@ -120,10 +123,10 @@ export default function DevProfile(props) {
       }
     })
     .catch(err => console.log(err));
-
+    
+    // For Members
     axios.post(urlMembers, data)
     .then(response => {
-      console.log(response.data)
       if (response.data < 3) {
         setHasMembers(false);
       } else {
@@ -139,7 +142,7 @@ export default function DevProfile(props) {
     <>
       <div className='profile-container' onLoad={handleLoad}>
         <div className='details-container'>
-          <img src={ dataStatus && isNaN(dev[0].profile_picture) ? dev[0].profile_picture : props.user_image } alt='Profile' />
+          <img src={ dataStatus && (isNaN(dev[0].profile_picture) || dev[0].profile_picture === "undefined") ? dev[0].profile_picture : props.user_image } alt='Profile' />
           <h4> { dataStatus ? dev[0].devUser : props.devname } </h4>
           <h6> { dataStatus ? dev[0].dev_email : props.devemail } </h6>
 
@@ -160,7 +163,9 @@ export default function DevProfile(props) {
             <Button variant='outline-success' href='/publishGame'> Add Game </Button>
           </div>
 
-          <div className='list-container' > <GameListView /> </div>
+          <div className='list-container' > 
+            { hasGames ? (<GameListView games={games} />) : (<NoView />) }
+          </div>
         </div>
       </div>
     </>

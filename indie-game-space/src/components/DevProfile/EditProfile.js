@@ -6,15 +6,17 @@ import './EditProfile.css';
 
 function EditProfile(props) {
 
-    const [memberList, setMemberList] = useState([{ name : "" }]);
+    const [memberList, setMemberList] = useState([[""]]);
     const [devName, setDevName] = useState();
     const [devEmail, setDevEmail] = useState();
     const [devType, setDevType] = useState();
     const [profile, setProfile] = useState();
 
+    console.log(memberList);
+
     // For Members List
     const handleAddMember =() => {
-        setMemberList([...memberList, { name : "" }]);
+        setMemberList([...memberList, [""]]);
     }
 
     const handleRemoveMember = (index) => {
@@ -26,7 +28,7 @@ function EditProfile(props) {
     const handleMemberTextChange = (e, index) => {
         const { value } = e.target;
         const list = [...memberList];
-        list[index].name = value;
+        list[index] = value;
         setMemberList(list);
     }
 
@@ -49,7 +51,7 @@ function EditProfile(props) {
     const uploadImage = async (e) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
-        setProfile({ profile : base64 });
+        setProfile(base64);
     };
 
     // For Developers Name
@@ -81,11 +83,13 @@ function EditProfile(props) {
             data.append("type", devType);
             data.append("members", memberList);
 
-            const url = 'http://localhost/IndieGameSpace/indie-game-space/src/api/updateAccount';
+            const url = 'http://localhost/IndieGameSpace/indie-game-space/src/api/updateAccount.php';
 
             axios.post(url, data)
             .then(response => {
-                alert(response.data)
+                sessionStorage.setItem("user", devName);
+                alert(response.data);
+                console.log(response.data);
             })
             .catch(err => console.log(err));
 
@@ -95,6 +99,10 @@ function EditProfile(props) {
 
     }
 
+    // const defaults = () => {
+    //     // TODO: get default data for preview
+    // }
+
     return (
         <>
             <div className='form-container'>
@@ -102,7 +110,7 @@ function EditProfile(props) {
                     {/* Image Row */}
                     <div className='row-container gap'>
                         <div className='col-container left-field'>
-                            <img src={profile ? profile.profile : defaultUser} alt='profile' />
+                            <img src={profile ? profile : defaultUser} alt='profile' />
                         </div>
                         <div className='col-container right-field'>
                             <input type='file' onChange={ uploadImage } />
