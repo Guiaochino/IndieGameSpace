@@ -4,7 +4,7 @@
 
     require './database.php';
 
-    $developerQuery = "SELECT devUser, dev_email, dev_type, profile_picture FROM dev_account";
+    $developerQuery = "SELECT * FROM dev_account";
     $devs = mysqli_query($connection, $developerQuery);
 
     $devs_arr = array();

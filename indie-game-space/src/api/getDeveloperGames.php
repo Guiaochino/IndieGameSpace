@@ -6,7 +6,7 @@
 
     $userlogged = $_REQUEST["username"];
 
-    $devGameList = "SELECT game_name, rating FROM game_profile WHERE dev_id=(SELECT devID FROM dev_account WHERE dev_account.devUser = '$userlogged')";
+    $devGameList = "SELECT * FROM game_profile WHERE dev_id=(SELECT devID FROM dev_account WHERE dev_account.devUser = '$userlogged')";
     $result = mysqli_query($connection, $devGameList);
 
     $games_arr = array();

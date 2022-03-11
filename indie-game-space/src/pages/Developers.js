@@ -3,7 +3,6 @@ import Footer from '../components/Footer/Footer';
 import DevsContent from './DevsContent';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { devsObjOne, devsObjTwo, devsObjThree, devsObjFour, devsObjFive } from './DevsData';
 
 function DevList(props) {
   return(

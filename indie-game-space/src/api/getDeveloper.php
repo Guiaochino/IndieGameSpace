@@ -6,7 +6,7 @@
 
     $userlogged = $_REQUEST["username"];
 
-    $getDeveloperAccount = "SELECT devUser, dev_email, media_link_fb, media_link_twt, media_link_ig, profile_picture FROM dev_account WHERE devUser = '$userlogged'";
+    $getDeveloperAccount = "SELECT * FROM dev_account WHERE devUser = '$userlogged'";
     
     $dev = mysqli_query($connection, $getDeveloperAccount);
 

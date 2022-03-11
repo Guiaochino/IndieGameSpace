@@ -35,7 +35,7 @@ const DevsContent = (props) => {
             setStart('');
             setPadding(true);
         }
-    }, [])
+    }, [props.order])
 
     return (
         <>

@@ -160,12 +160,6 @@ export default function DevProfile(props) {
 
           { hasMembers ? (<HasMember members={members} />) : (<NoMember/>) }
 
-          <div className='link-container'> 
-            <BsFacebook />
-            <BsTwitter />
-            <BsInstagram />
-          </div>
-
           <Button variant='outline-dark' className='block' href='/editProfile' > Edit Profile </Button>
         </div>
 

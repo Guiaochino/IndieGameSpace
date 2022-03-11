@@ -3,13 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import GamesContent from './GamesContent';
-import { gamesObjFour, gamesObjOne, gamesObjThree, gamesObjTwo, gamesObjFive } from './GamesData';
 
 function GameList(props){
   return(
     <>
       {props.games.map((game, index) => (
-        <GamesContent key={index} title={game.game_name} desc={game.game_desc} genre={game.game_genre} image={game.game_image} developer={game.devUser} order={index} />
+        <Link 
+        to={{
+          pathname : '/gameProfile/' + game.game_name,
+          state : {
+            ...game
+          }
+        }} 
+        style={ {textDecoration : 'none'} } >
+          <GamesContent key={index} title={game.game_name} desc={game.game_desc} genre={game.game_genre} image={game.game_image} developer={game.devUser} order={index} />
+        </Link>
       ))} 
     </>
     
