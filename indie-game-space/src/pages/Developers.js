@@ -8,7 +8,16 @@ function DevList(props) {
   return(
     <>
       {props.devs.map((developer, index) => (
-        <DevsContent key={index} devname={developer.devUser} type={developer.dev_type} email={developer.dev_email} profile_picture={developer.profile_picture} order={index} />
+        <Link 
+        to={{
+          pathname : '/devprofile/' + developer.devUser,
+          state : {
+            ...developer
+          }
+        }} style={{textDecoration : 'none'}} >
+          <DevsContent key={index} devname={developer.devUser} type={developer.dev_type} email={developer.dev_email} profile_picture={developer.profile_picture} order={index} />
+        </Link>
+        
       ))} 
     </>
     

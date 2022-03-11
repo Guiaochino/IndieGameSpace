@@ -5,7 +5,6 @@ import { BsPencilSquare, BsTrashFill } from 'react-icons/bs';
 import defaultImage from '../../images/defaultUser.png'
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
-import { BsFacebook, BsTwitter, BsInstagram } from 'react-icons/bs'
 
 // Template for the Viewing of Published Games by Developer
 function GameView(props) {

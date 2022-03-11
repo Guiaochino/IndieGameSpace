@@ -1,0 +1,37 @@
+
+.account-container {
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 10vh 0;
+}
+
+.image-container {
+    width: 20%;
+    margin-bottom: 5vh;
+}
+
+.developer {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.type, .email, .dev-link {
+    color: #999995;
+}
+
+.type {
+    margin-bottom: 2vh;
+} 
+
+.dev-link {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}

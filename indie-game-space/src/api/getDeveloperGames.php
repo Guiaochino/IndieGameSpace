@@ -5,6 +5,7 @@
     require './database.php';
 
     $userlogged = $_REQUEST["username"];
+    echo json_encode($_REQUEST, JSON_PRETTY_PRINT);
 
     $devGameList = "SELECT * FROM game_profile WHERE dev_id=(SELECT devID FROM dev_account WHERE dev_account.devUser = '$userlogged')";
     $result = mysqli_query($connection, $devGameList);

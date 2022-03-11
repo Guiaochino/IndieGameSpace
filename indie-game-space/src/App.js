@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import GlobalStyle from './globalStyles';
-import {Games, Developers, DevsSignIn, DevsSignUp} from './pages/Index';
+import {Games, Developers, DevsSignIn, DevsSignUp, ViewDev} from './pages/Index';
 import { Navbar, Home, Sidebar, ScrollToTop, GameProfile, EditProfile, DevProfile, PublishForm }  from './components/Index';
 
 function App() {
@@ -48,6 +48,7 @@ function App() {
         <Route path='/games' component={Games} />
         <Route path='/gameProfile' component={GameProfile} />
         {/* <Route path='/gameProfile2' component={GameProfile2} /> */}
+        <Route path={'/devprofile'} component={ViewDev} />
         <Route 
         path='/Profile' 
         render={(props) => (
@@ -55,6 +56,7 @@ function App() {
         )} />
 
         <Route path='/publishGame' component={PublishForm} />
+        
         <Route 
         path='/editProfile' 
         render={(props => (
